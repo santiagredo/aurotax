@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passportLocal = require('passport-local').Strategy;
 const cors = require('cors'); 
+const bodyParser = require('body-parser');
 
 const path = require('path');
 const fs = require('fs');
@@ -23,7 +24,7 @@ const cookieParserSecret = process.env.COOKIE_PARSER_SECRET;
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors()); 
 app.use(express.json());
-
+app.use(bodyParser.json());
 
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser(cookieParserSecret));
