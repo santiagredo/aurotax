@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuroTax - Admin</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon3.ico" sizes="96x96">
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+     <!-- Bootstrap -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+         <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/html" src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="findAll()" >
+
+        <!-- NavBar -->
+        <nav class="navbar navbar-expand-lg bg-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html" translate="no"><i class="bi bi-x-diamond-fill"></i>AuroTax</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="tutoriales.html">Tutoriales</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="https://wa.me/573167782676?text=Hola%20,%20necesito%20ayuda%20con%20el%20proceso" 
+                    
+                    target="_blank" rel="noopener noreferrer">Contactenos</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Opciones
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="https://152.70.118.197:8383/login">Admin</a></li>
+                      <li><a class="dropdown-item" href="formOpt1.html">Formulario1</a></li>
+                      <li><a class="dropdown-item" href="formOpt2.html">Formulario2</a></li>
+                    </ul>
+                  </li>
+                </ul>
+
+        
+                 <!-- Sign up  -->
+                <div class="navbar-nav ml-auto action-buttons">
+                    
+                    <!-- Sign up  -->
+    
+                </div>
+
+                <div>
+                    <form action="/admin" method="POST">
+                        <input class="btn btn-danger" type="submit" placeholder="Logout" value="logout">
+                    </form>    
+                </div>
+    
+    
+              </div>
+            </div>
+          </nav>
+
+    
+
+     
+
+    
+    <div class="container mt-4">
+        <p></p>
+        <header>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+              <h1 class="display-4 fw-normal">Opciones</h1>
+              <p class="fs-5 text-muted">Basados en tus condiciones y perfil puedes optar:</p>
+            </div>
+          </header>     
+          <div>
+            <button type="button" class="btn btn-primary" onclick="findAll()"> Cargar</button>
+          </div>     
+    
+    <!-- class="table table-bordered table-sm" -->
+
+
+    <table  class="table table-striped table-bordered table-hover"> 
+
+        <thead class="thead-dark" id="thead">
+            <tr>
+            <th>ID TAX PAYER</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Pais</th>
+            <th>Opciones</th>
+            <!-- <th>Direccion</th>
+            <th>Ciudad</th>
+            <th>Apt</th>
+            <th>Codigo Postal</th>
+            <th>Estado</th>
+            <th>Telefono</th>
+            <th>ssn</th>
+            <th>ssn2</th>
+            <th>email</th>
+            <th>dateEnter</th>
+            <th>dateEnd</th>
+            <th>days2019</th>
+            <th>days2020</th>
+            <th>days2021</th>
+            <th>days2022</th>
+            <th>taxes</th>
+            <th>lastTaxForm</th>
+            <th>terms</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="22">No Registros</td>
+            </tr>
+        </tbody>
+
+
+    </table>
+
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+              <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© 2022 AuroTax.com</span>
+          </div>
+        </footer>
+      </div>
+
+
+
+</div>
+    
+
+</body>
+</html>
+
+<script>
+
+
+const ApiUrl = "http://155.248.236.50:8080/api/taxpayer/all";
+
+async function findAll(){
+   
+    $.ajax({
+        type: "GET",
+        url: ApiUrl,
+        dataType: "json",
+        crossDomain: true,
+        contentType: "application/json",
+        complete: async function(response){
+            if(response.status ==200){
+                const data = JSON.parse(response.responseText);    
+                $("tbody").html(""); 
+                for (let index = 0; index<data.length;index++){
+                    const data2 = await getAllDecryptedData(data[index]);
+                    // Cambiar todos los data[index] por data2 en prod
+
+                        $("tbody").append(`<tr>
+                        <td>${data2.idTaxPayer}</td>
+                        <td>${data2.name}</td>
+                        <td>${data2.lastName}</td>
+                        <td>${data2.country}</td>
+                        <td><button class="btn btn-primary"onclick="storageIdPayer(${data2.idTaxPayer})"><ahref="pdf.html">Detalle</a></button>
+                            <button class="btn btn-danger" onclick="deleteById(${data2.idTaxPayer})">Eliminar</button></td>
+                        </tr>`);
+                } 
+                
+            } else{
+                alert("No se han cargado los registros");
+            }
+        }
+
+    });
+}
+
+function findAjax(){
+
+    $.ajax({
+        type: "GET",
+        url: ApiUrl,
+        dataType: "json",
+        crossDomain: true,
+        contentType: "application/json",
+        complete: function(response){
+            if(response.status ==200){
+                const data = JSON.parse(response.responseText);
+                console.log(data);
+                $("tbody").html("");   
+                for(let index = 0; index <data.length; index++){
+                    $("tbody").append(`<tr>
+                    <td>${data[index].idTaxPayer}</td>
+                    <td>${data[index].name}</td>
+                    <td>${data[index].lastName}</td>
+                    <td>${data[index].country}</td>
+                    <td> <button onclick="postInfo()">GenerarPDF</button><button onclick="payer.deleteById(${data[index].idTaxPayer})">Eliminar</button> </td>
+                    <td><button a href= 'pdf.html' onclick="storageIdPayer(${data[index].idTaxPayer})">Detalle</button></td>
+
+                    </tr>`);
+                }
+            } else{
+                alert("No se han cargado los registros");
+            }
+        }
+
+    });
+}
+
+function findById(idTaxPayer){
+    
+    $.ajax({
+        type: "GET",
+        url: "http://155.248.236.50:8080/api/taxpayer/" + idTaxPayer,
+        dataType: "json",
+        crossDomain: true,
+        // data: JSON.stringify(payer),
+        contentType: "application/json",
+        success: function(data){
+            console.log(idTaxPayer);
+            console.log(data);   
+            document.getElementById("idTaxPayer").value = `${data.idTaxPayer}`
+            document.getElementById("name3").value = `${data.name}`
+
+        },
+        error: function(){
+            alert("error amigo");
+
+        }
+        
+    });
+
+}
+
+function storageIdPayer(idTaxPayer){
+    sessionStorage.setItem('idTaxPayer', idTaxPayer);
+    location.href= 'pdf.html';
+}
+
+function findByIdDesencryted(){
+    let idTaxPayer= sessionStorage.getItem('idTaxPayer');
+
+    $.ajax({
+        type: "GET",
+        url: "http://155.248.236.50:8080/api/taxpayer/" + idTaxPayer,
+        dataType: "json",
+        crossDomain: true,
+        contentType: "application/json",
+        complete: async function(response){
+            if(response.status ==200){
+                const data = JSON.parse(response.responseText);  
+                console.log(data); 
+                    const data2 = await getAllDecryptedData(data);
+                    console.log(data2);
+
+                    document.getElementById('nameLabel3').innerHTML = `${data2.name}`
+                    document.getElementById('lastNameLabel3').innerHTML = `${data2.lastName}`
+                    
+                    document.getElementById("idTaxPayer").value = `${data2.idTaxPayer}`
+                    document.getElementById("name").value = `${data2.name}`
+                    document.getElementById("lastName").value = `${data2.lastName}`
+                    document.getElementById("ssn").value = `${data2.ssn}`
+                    document.getElementById("country").value = `${data2.country}`
+                    document.getElementById("homeAddress").value = `${data2.homeAddress}`
+                    document.getElementById("apt").value = `${data2.apt}`
+                    document.getElementById("city").value = `${data2.city}`
+                    document.getElementById("state").value = `${data2.state}`
+                    document.getElementById("postalCode").value = `${data2.postalCode}`
+                    document.getElementById("phone").value = `${data2.phone}`
+                    document.getElementById("email").value = `${data2.email}`
+                    document.getElementById("dateEnter").value = `${data2.dateEnter}`
+                    document.getElementById("dateEnd").value = `${data2.dateEnd}`
+                    document.getElementById("days2020").value = `${data2.days2020}`
+                    document.getElementById("days2021").value = `${data2.days2021}`
+                    document.getElementById("days2022").value = `${data2.days2022}`
+                    document.getElementById("taxes").value = `${data2.taxes}`
+                    document.getElementById("lastTaxForm").value = `${data2.lastTaxForm}`
+                    document.getElementById("changeStatus").value = `${data2.changeStatus}`
+                    document.getElementById("detailChangeStatus").value = `${data2.detailChangeStatus}`
+
+                    document.getElementById("netProfit").value = `${data2.netProfit}`
+                    document.getElementById("profitAdjusted").value = `${data2.profitAdjusted}`
+                    document.getElementById("deductionSelfEmp").value = `${data2.deductionSelfEmp}`
+                    document.getElementById("taxOne").value = `${data2.taxOne}`
+                    document.getElementById("taxTwo").value = `${data2.taxTwo}`
+                    document.getElementById("totalTaxPartOne").value = `${data2.totalTaxPartOne}`
+                    document.getElementById("deductionSelfEmpTax").value = `${data2.deductionSelfEmpTax}`
+                    document.getElementById("baseAdjusted").value = `${data2.baseAdjusted}`
+                    document.getElementById("taxPartTwo").value = `${data2.taxPartTwo}`
+                    document.getElementById("totalTaxYear").value = `${data2.totalTaxYear}`
+
+            } else{
+                alert("No se han cargado los registros");
+            }
+        }
+
+    });
+
+
+}
+
+function deleteById(idTaxPayer){
+    $.ajax({
+        type: "DELETE",
+        url: "http://155.248.236.50:8080/api/taxpayer/"+idTaxPayer,
+        dataType: "json",
+        crossDomain: true,
+        data: JSON.stringify({idTaxPayer:idTaxPayer}),
+        contentType: "application/json",
+        complete: function(response){
+            if(response.status ==204){
+                findAll();
+                alert("Registro Eliminado con Exito")
+    
+            }else{
+                alert("Registro no fue eliminado");
+                
+            }
+        }
+    });
+    
+}
+
+class payer{
+    static insert(payer){
+            $.ajax({
+                type: "POST",
+                url: ApiUrl,
+                dataType: "json",
+                crossDomain: true,
+                data: JSON.stringify(payer),
+                contentType: "application/json",
+                complete: function(response){
+                    if(response.status ==201){
+                        alert("Registro adicionado con exito");
+                    }else{
+                        alert("Registro no fue guardado");
+                    }
+                }
+            });
+        }
+
+
+    static update(payer){
+        $.ajax({
+            type: "PUT",
+            url: ApiUrl,
+            dataType: "json",
+            crossDomain: true,
+            data: JSON.stringify(payer),
+            contentType: "application/json",
+            complete: function(response){
+                if(response.status ==200){
+                    alert("Registro adicionado con exito");
+                }else{
+                    alert("Registro no fue guardado");
+                }
+            }
+        });
+    }
+
+}
+
+//const baseUrl2 = 'http://localhost:8383' 
+const baseUrl2 = 'https://152.70.118.197:8383/' 
+const postUrl2 = '/decrypted'
+
+//Función para enviar la captura de valores del formulario al servidor
+async function getAllDecryptedData(obj){
+     
+    //Con los valores en un objeto, se envía el objeto al servidor
+    const res = await fetch(`${baseUrl2}${postUrl2}`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            data: obj
+        })
+    })
+
+    //Respuesta del servidor. Recibe un objeto: {status: data}. Devuelve el mismo objeto enviado
+    const data = await res.json();
+    // console.log("Aqui");
+    // console.log(data.status2);
+    // console.log("fin");
+    return data.status2;
+    
+
+}
+
+
+
+</script>

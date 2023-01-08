@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AuroTax - Option 2</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon3.ico" sizes="96x96">
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/html" src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+    <!-- captcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- swal -->
+    <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+
+    <script src="https://unpkg.com/pdf-lib@1.11.0"></script>
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+
+        <!-- calculos -->
+    <script defer src="./index.js"></script>
+    <script defer src="./validators.js"></script>
+    <script type="text/javascript" src="./finance2.js"></script> 
+    <script type="text/javascript" src="./formOpt2.js"></script> 
+</head>
+
+<body onload="showGeneral()">
+    <div class="container mt-4">
+        <div class="row">
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color:#d3e3fa">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html" translate="no"><i class="bi bi-x-diamond-fill"></i>AuroTax</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+
+              <li class="nav-item"> 
+                <a class="nav-link active" href="https://wa.me/573167782676?text=Hola%20,%20necesito%20ayuda%20con%20el%20proceso"
+                target="_blank" rel="noopener noreferrer">Agenda una cita</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="tutoriales.html">Tutoriales</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="market.html">Plan de referidos</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Contactenos
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="https://wa.me/573167782676?text=Hola%20,%20necesito%20ayuda%20con%20el%20proceso" 
+                    target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> Whatsapp</a></li>
+                  <li><a class="dropdown-item" href="https://www.facebook.com/cristianjulian.aricapafranco" target="_blank"
+                     rel="noopener noreferrer"> 
+                    <i class="bi bi-facebook"></i> Facebook</a></li>
+                  <li><a class="dropdown-item" href="https://www.instagram.com/iam_aurotax/?hl=es" target="_blank" 
+                    rel="noopener noreferrer">
+                    <i class="bi bi-instagram"></i> Instragram</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Otras Opciones
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="https://152.70.118.197:8383/login">Admin</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" hidden>
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+
+     <!-- lenguaje  -->
+
+<div class="navbar-nav ml-auto action-buttons">
+      <style type="text/css">
+
+       /*google translate Dropdown */
+       
+       #google_translate_element select{
+       background:#6e3ef3;;
+       color:#ffffff;
+       border: none;
+       border-radius:3px;
+       padding:6px 8px
+       }
+       
+       /*google translate link | logo */
+         .goog-logo-link{
+         display:none!important;
+         }
+       .goog-te-gadget{
+       color:transparent!important;
+       }
+       
+       /* google translate banner-frame */
+       
+       .goog-te-banner-frame{
+       display:none !important;
+       }
+       
+       #goog-gt-tt, .goog-te-balloon-frame{display: none !important;}
+      .goog-text-highlight { background: none !important; box-shadow: none !important;}
+       
+       body{top:0!important;}
+         </style>
+       
+       <div id='google_translate_element' class="nav-item dropdown"></div>
+       <script>
+       function googleTranslateElementInit() {
+       new google.translate.TranslateElement({
+       pageLanguage: 'es',
+       autoDisplay: 'true',
+       includedLanguages: 'en,es,fr,it,pt,de',
+       layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+       }, 'google_translate_element');
+       }
+       </script>
+       <script src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
+
+ </div>
+
+       <!-- lenguaje  -->
+  
+             <!-- Sign up  -->
+            <div class="navbar-nav ml-auto action-buttons">
+                
+                <div class="nav-item dropdown">
+                    <a href="https://152.70.118.197:8383/login" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn" aria-expanded="true">Log In</a>
+                    <div class="dropdown-menu action-form ">
+                            <input type="button" class="btn btn-primary btn-block" value="Login">    
+                    </div>
+                </div>
+                <!-- Sign up  -->
+            </div>
+
+            <div>
+  
+          </div>
+        </div>
+      </nav>
+      <p></p>
+      
+      <!-- End Example Code -->
+
+                 <!-- inicio Info General -->
+            <div class="col-md-8 offset-md-2" id="general">
+                <P></P>
+                <P></P>
+                <div class="alert alert-primary mt-5" role="alert">
+                    <H1>Bienvenid@</H1>
+                    <h3>Al gestor de la forma 1040NR para Aupairs.</h3>
+                    <h6>Iniciamos diligenciamiento del siguiente formulario el cual esta parametrizado para realizar la Liquidación de impuestos de un Aupair que se se encuentra en 
+                        los EE.UU bajo la visa J1, soltero y que no presenta ingresos ademas de los provenientes 
+                        por la familia huesped "host-family". Por favor lea atentamente las instrucciones y responda debidamente.</h6>
+
+                     <p>
+
+
+                     </p>
+                </div>
+
+                    <h3>Parte 1. Información General</h3>
+                        <hr>
+                        <P></P>
+                        
+
+                            <form id="formGeneral" class="row g-3 needs-validation" novalidate action=""
+                             onsubmit="saveInfoGeneral(); return false;" >
+
+                                <!-- La clase pdfValues2 captura los valores de cada entrada -->
+
+                                <div class="row mb-3">
+                                    <!-- group name -->
+                                    <div class="col-md-6" id="group_name">
+                                        <label for="name" class="form-label">Nombre e inicial</label>
+                                        <input type="text" class="form-control pdfValues2" id="name" name="name[name]"
+                                        onblur="this.value = upperCase(this.value);" placeholder="Carla A." maxlength="30" required >
+                                        <div class="invalid-feedback">
+                                            <i class="bi bi-exclamation-triangle"></i> No olvide diligenciar su nombre e inicial del segundo nombre (Si aplica).
+                                        </div>
+                                    </div>
+                                    <!-- group lastName -->
+                                    <div class="col-md-6" id="group_lastName">
+                                        <label for="lastName" class="form-label">Apellidos</label>
+                                        <input type="text" class="form-control pdfValues2" id="lastName" maxlength="40" onblur="this.value = upperCase(this.value);" name="lastName" placeholder="Lopez Ortiz" required>
+                                        <div class="invalid-feedback">
+                                            <i class="bi bi-exclamation-triangle"></i> No olvide diligenciar sus apellidos.
+                                        </div>
+                                    </div>
+
+                                    <!-- group SSN -->
+                                    <div class="col-md-6" id="group_ssn">
+                                        <label for="ssn" class="form-label">SSN</label>
+                                        <input type="number" class="form-control pdfValues2" id="ssn" name="ssn" required min="0" max="999999999" maxlength="9" placeholder=" Ej. 123455678" onkeyup="validateSsn();validateSsn2() ">
+                                        <div class="invalid-feedback">
+                                            <i class="bi bi-exclamation-triangle"></i>
+                                            El SSN no lleva caracteres especiales, solo números y no debe mayor a 9 dígitos.
+                                        </div>
+                                        <div id="ssnAlert2" style="display:none; color:#dc3545;" >
+                                            <i class="bi bi-exclamation-triangle"></i>
+                                            El SSN debe ser un número de 9 dígitos ej. 123456789.
+                                        </div>
+                                    </div>
+
+                                    <!-- group SSN 2 -->
+                                    <div class="col-md-6" id="group_ssn">
+                                        <label for="ssn2" class="form-label">Confirmar SSN</label>
+                                        <input type="number" class="form-control pdfValues2" id="ssn2" name="ssn2" required min="0" max="999999999" maxlength="9" placeholder=" Ej. 123455678" onkeyup="validateSsn()">
+                                        <div class="invalid-feedback">
+                                            <i class="bi bi-exclamation-triangle"></i>
+                                            El SSN no es igual al anteriormente registrado.
+                                        </div>
+                                        <div id="ssnAlert" style="display:none; color:#dc3545;" >
+                                            <i class="bi bi-exclamation-circle"></i>
+                                            El SSN no es igual al anteriormente registrado.
+                                        </div>
+
+                                    </div>
+
+                                   <!-- group country -->
+                                    <div class="row mb-3" id="group_country">
+                                        <label for="country" class="form-label">Pais de nacionalidad</label>
+                                        <select class="form-select pdfValues2" id="country" name="country" required>
+                                            <option selected disabled value="">Seleccione un país</option>
+                                            <option value="ARGENTINA">Argentina</option>
+                                            <option value="BOLIVIA">Bolivia</option>
+                                            <option value="BRASIL">Brasil</option>
+                                            <option value="CHILE">Chile</option>
+                                            <option value="COLOMBIA">Colombia</option>
+                                            <option value="COSTA RICA">Costa Rica</option>
+                                            <option value="ECUADOR">Ecuador</option>
+                                            <option value="EL SALVADOR">El Salvador</option>
+                                            <option value="GUATEMALA">Guatemala</option>
+                                            <option value="HONDURAS">Honduras</option>
+                                            <option value="MÉXICO">México</option>
+                                            <option value="NICARAGUA">Nicaragua</option>
+                                            <option value="PANAMA">Panamá</option>
+                                            <option value="PARAGUAY">Paraguay</option>
+                                            <option value="PERU">Perú</option>
+                                            <option value="REPUBLICA DOMINICANA">República Dominicana</option>
+                                            <option value="URUGUAY">Uruguay</option>
+                                            <option value="VENEZUELA">Venezuela</option>
+                                            <option value="GERMANY">Alemania</option>
+                                            <option value="UNITED KINGDOM">Reino Unido</option>
+                                            <option value="FRANCE">Francia</option>
+                                            <option value="ITALY">Italia</option>
+                                            <option value="SPAIN">España</option>
+                                            <option value="POLAND">Polonia</option>
+                                            <option value="NETHERLANDS">Paises bajos</option>
+                                            <option value="CZECH REPUBLIC (CZECHIA)">Republica checa</option>
+                                            <option value="SWEDEN">Suiza</option>
+                                            <option value="SOUTH AFRICA">Sudáfrica</option>
+                                            <option value="CHINA">China</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            <i class="bi bi-exclamation-triangle"></i>
+                                            Selecciona un país válido.
+                                        </div>
+                                    </div>
+
+                                    <!-- group Address -->
+
+                                    <div class="row mb-3">
+
+                                        <!-- homeAddress -->
+                                        <div class="col-md-6">
+                                            <label for="homeAddress" class="form-label">Direccion en USA</label>
+                                            <input type="text" class="form-control pdfValues2" onblur="this.value = upperCase(this.value);" id="homeAddress" name="homeAddress" 
+                                             maxlength="30" required>
+                                            <div class="invalid-feedback">
+                                                <i class="bi bi-exclamation-triangle"></i>
+                                                Proporciona una dirección válida.
+                                            </div>
+                                        </div>
+                                        <!-- apt -->
+                                        <div class="col-md-6">
+                                            <label for="apt" class="form-label">Apto. No.</label>
+                                            <input type="text" class="form-control pdfValues2" maxlength="10"id="apt" name="apt">
+                                        </div>
+                                        <!-- city -->
+                                        <div class="col-md-6">
+                                            <label for="city" class="form-label">Ciudad/Pueblo</label>
+                                            <input type="text" class="form-control pdfValues2" maxlength="20" onblur="this.value = upperCase(this.value);" id="city" name="city" required>
+                                            <div class="invalid-feedback">
+                                                <i class="bi bi-exclamation-triangle"></i>
+                                                Proporciona una ciudad/ pueblo válida.
+                                            </div>
+                                        </div>
+                                        <!-- state -->
+                                        <div class="col-md-6">
+                                            <label for="state" class="form-label">Estado en USA</label>
+                                                <select class="form-select pdfValues2" id="state" name="state" required>
+                                                    <option selected disabled value="">Seleccione el estado de residencia</option>
+                                                    <option value="AL">Alabama</option>
+                                                    <option value="AK">Alaska</option>
+                                                    <option value="AZ">Arizona</option>
+                                                    <option value="AR">Arkansas</option>
+                                                    <option value="CA">California</option>
+                                                    <option value="CO">Colorado</option>
+                                                    <option value="CT">Connecticut</option>
+                                                    <option value="DE">Delaware</option>
+                                                    <option value="DC">Disctrict of Columbia</option>
+                                                    <option value="FL">Florida</option>
+                                                    <option value="GA">Georgia</option>
+                                                    <option value="HI">Hawaii</option>
+                                                    <option value="ID">Idaho</option>
+                                                    <option value="IL">Illinois</option>
+                                                    <option value="IN">Indiana</option>
+                                                    <option value="IA">Iowa</option>
+                                                    <option value="KS">Kansas</option>
+                                                    <option value="KY">Kentucky</option>
+                                                    <option value="LA">Louisana</option>
+                                                    <option value="ME">Maine</option>
+                                                    <option value="MD">Maryland</option>
+                                                    <option value="MA">Massachusetts</option>
+                                                    <option value="MI">Michigan</option>
+                                                    <option value="MN">Minnesota</option>
+                                                    <option value="MS">Mississippi</option>
+                                                    <option value="MO">Missouri</option>
+                                                    <option value="MT">Montana</option>
+                                                    <option value="NE">Nebraska</option>
+                                                    <option value="NV">Nevada</option>
+                                                    <option value="NH">New Hampshire</option>
+                                                    <option value="NJ">New Jersey</option>
+                                                    <option value="NM">New Mexico</option>
+                                                    <option value="NY">New York</option>
+                                                    <option value="NC">North Carolina</option>
+                                                    <option value="ND">North Dakota</option>
+                                                    <option value="OH">Ohio</option>
+                                                    <option value="OK">Oklahoma</option>
+                                                    <option value="OR">Oregon</option>
+                                                    <option value="PA">Pennsylvania</option>
+                                                    <option value="PR">Puerto Rico</option>
+                                                    <option value="RI">Rhode Island</option>
+                                                    <option value="SC">South Carolina</option>
+                                                    <option value="SD">South Dakota</option>
+                                                    <option value="TN">Tennesse</option>
+                                                    <option value="TX">Texas</option>
+                                                    <option value="UT">Utah</option>
+                                                    <option value="VT">Vermont</option>
+                                                    <option value="VA">Virginia</option>
+                                                    <option value="WA">Washington</option>
+                                                    <option value="WV">West Virginia</option>
+                                                    <option value="WI">Wisconsin</option>
+                                                    <option value="WY">Wyoming</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    <i class="bi bi-exclamation-triangle"></i>
+                                                    Selecciona un estado válido.
+                                                </div>
+                                        </div>
+                                        <!-- postalCode -->
+                                        <div class="col-md-6">
+                                            <label for="postalCode" class="form-label">Código Postal</label>
+                                            <input type="number" class="form-control pdfValues2" min="0" maxlength="10" id="postalCode" name="postalCode" required>
+                                            <div class="invalid-feedback">
+                                                <i class="bi bi-exclamation-triangle"></i>
+                                                Proporciona un código postal válido.
+                                            </div>
+                                        </div>
+                                        <!-- group phone-->
+                                        <div class="col-md-6" id="group_phone">
+                                            <label for="phone" class="form-label">Teléfono</label>
+                                            <input type="number" class="form-control pdfValues2" id="phone" name="phone" min="0" maxlength="15" required>
+                                            <div class="invalid-feedback">
+                                                <i class="bi bi-exclamation-triangle"></i> El teléfono solo 
+                                                puede contener números y el maximo son 14 dígitos.
+                                            </div>
+                                        </div>
+
+                                        <!-- group email -->
+                                        <div class="col-mb-6" id="group_email">
+                                            <label for="email" class="form-label">Correo Electrónico</label>
+                                            <input type="email" class="form-control pdfValues2" id="email" name="email" maxlength="40" required>
+                                            <div class="invalid-feedback">
+                                                <i class="bi bi-exclamation-triangle"></i> El correo es vital para enviar la informacion suministrada.
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- group Otra informacion -->
+                                    <div>
+                                        <hr>
+                                        <h4>Otra Información</h4>
+                                        <p>Tenga a la mano las fecha de ingreso y salida del pais, asi como ultimo formulario de impuestos 1040 reportado (si aplica).</p>
+
+                                        <div class="row mb-2">
+                                            <!-- Dates-->
+                                            <div class="col-md-4">
+                                                <div id="group_dateEnter">
+                                                    <label for="dateEnter">Fecha de Ingreso a USA</label>
+                                                    <input type="date" id="dateEnter" class="form-control pdfValues2" name="dateEnter" value="" min="2019-01-01" 
+                                                    max="2022-12-31" required oninput="calculardiasDiscount2019(),calculardiasDiscount2020(),calculardiasDiscount2021(),
+                                                    calculardiasDiscount2022()" onblur="showAlertDays()">
+                                                    <div class="invalid-feedback">
+                                                        <i class="bi bi-exclamation-triangle"></i> Seleccione la fecha de ingreso a USA.
+                                                    </div>
+                                                </div >
+                                                <p></p>
+                                            </div>
+
+                                           
+                                                    <!-- fecha salida -->
+
+                                                <div class="row md-4">
+                                                    <label for="dateQuestion" class="form-label">¿Saliste de USA definitivamente antes del 31/12/2022? Responda o continue segun el caso</label>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <select class="form-select col-md-4" id="dateQuestion" name="dateQuestion" onchange="showContentDate()">
+                                                        <option selected value="1">NO</option>
+                                                        <option value="0">SI</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                                        Seleccione una respuesta valida.
+                                                    </div>
+                                                </div>
+
+                                                <div id="group_dateExit" class="col-md-4" style="display: none;">
+                                                    <label for="dateEnd">Seleccione la fecha de salida.</label>
+                                                    <input type="date" id="dateEnd" name="dateEnd" class="form-control pdfValues2" value="2022-12-31" min="2022-01-31" max="2022-12-31" 
+                                                    oninput="calculardiasDiscount2019(),calculardiasDiscount2020(),calculardiasDiscount2021(),calculardiasDiscount2022()" onblur="showAlertDays()">
+                                                    <div>
+                                                    <p> <small> <em><b>Importante:</b>Si salió definitivamente de USA antes del 31/12/2022 indique la fecha exacta.</p></em></small>
+                                                    </div>
+                                                    <div id="alertDays" style="display: none;">
+
+                                                        <i class="bi bi-exclamation-triangle"></i> <p> <small style="color: #d61406"> <em><b>Importante:</b>La fecha de salida no puede ser menor a la de ingreso al país</p></em></small>
+
+                                                    </div>
+                                                </div>
+                                                <!-- fecha salida -->
+                                            <p></p>
+                                             <!-- group calculadora de dias -->
+
+                                        <div id="days" hidden>
+
+                                            <div>
+                                                <label for="group_years" class="form-label">Días de permanencia en USA durante los siguientes años (campo automatico)</label>
+                                            </div>
+                                       
+                                        
+                                        <div class="col-md-2">
+                                            <label for="days2020">Año 2020</label>
+                                            <input class="form-control pdfValues2" id="days2020" name="days2020" readonly>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <label for="days2021">Año 2021</label>
+                                            <input class="form-control pdfValues2" id="days2021" name="days2021" readonly>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <label for="days2022">Año 2022</label>
+                                            <input class="form-control pdfValues2" id="days2022" name="days2022" readonly>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <label for="days2019" hidden>Año 2019</label>
+                                            <input hidden class="form-control pdfValues2" id="days2019" name="days2019" readonly>
+                                        </div>
+                                         </div>
+
+                                        <!-- informacion fiscal -->
+                                        <div class="row md-3">
+                                            <label for="taxes" class="form-label">¿Ha presentado impuestos anteriormente
+                                                en USA? seleccione o continue segun el caso</label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-select col-md-2 pdfValues2" id="taxes" name="taxes" onchange="showContent1()">
+                                                <option selected value="1">NO</option>
+                                                <option value="0">SI</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                                Seleccione una respuesta valida.
+                                            </div>
+                                        </div>
+
+                                     
+                                        <div class="col-md-6">
+                                            <div id="inputLastTaxForm" style="display: none;">
+                                                <label for="lastTaxForm" class="form-label">Diligencie el nombre del 
+                                                    formulario utlizado en el ultimo año:</label>
+                                                <input type="text" class="form-control pdfValues2"
+                                                 id="lastTaxForm" onblur="this.value = upperCase(this.value);" maxlength="25" name="lastTaxForm" placeholder="por ejemplo 1040-NR">
+                                            </div>
+                                        </div>
+
+                                        <!-- informacion status -->
+                                        <div class="row md-3">
+                                            <label for="changeStatus" class="form-label">¿Cambió de estatus antes de finalizar el año? Seleccione o 
+                                                continue segun el caso</label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-select col-md-2 pdfValues2" id="changeStatus" name="changeStatus" onchange="showContentStatus1()">
+                                                <option selected value="1">NO</option>
+                                                <option value="0">SI</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                                Seleccione una respuesta valida
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div id="inputStatus" style="display: none;">
+                                                <label for="detailChangeStatus" class="form-label">Indique la fecha (MM/DD/AA) del radicado de su solicitud y el tipo de caso:</label>
+                                                <input type="text" class="form-control pdfValues2" onblur="this.value = upperCase(this.value);" id="detailChangeStatus" maxlength="60"
+                                                 name="detailChangeStatus" placeholder="Ej. 10/31/2022 change of satus to F1 student">
+                                            </div>
+                                        </div>
+                                        
+                                        </div>
+                                    </div>
+
+
+                                    <!-- grupo captcha -->
+
+                                    <div class="g-recaptcha" data-sitekey="6Lfr8NwjAAAAAJ1EuLDt6NeS4WT-go_sHJkm2Pel" data-callback="verifyCaptcha"></div>
+                    
+
+                                    <div id="g-recaptcha-error"></div>
+
+                                    <script>
+                                        var recaptcha_response = '';
+                                        function captcha() {
+                                            if(recaptcha_response.length == 0) {
+                                                document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;"> <i class="bi bi-exclamation-triangle"></i>This field is required.</span>';
+                                                return false;
+                                            }else{
+                                             return true;
+                                            }
+                                        }
+                                        function verifyCaptcha(token) {
+                                            recaptcha_response = token;
+                                            document.getElementById('g-recaptcha-error').innerHTML = '';
+                                        }
+                                        
+                                        </script>
+                                    <!-- grupo captcha -->
+
+                                    <!-- group Terms and Conditions -->
+                                    <div class="col-12">
+                                        <div class="form-check" id="group_terms">
+                                            <input class="form-check-input pdfValues2" type="checkbox" name="terms" id="terms" required>
+                                            <label for="invalidCheck"  class="form-check-label">Autorización para el Tratamiento de Datos Personales
+                                                 y aceptacion de los Terminos y Condiciones.</label>
+                                            <div class="invalid-feedback">
+                                                <i class="bi bi-exclamation-triangle"></i>
+                                                Se deben aceptar los terminos y condiciones para continuar.
+                                            </div>
+                                        </div>
+                                        <a  href="#" class="btn btn-link"for="invalidCheck" data-bs-toggle="modal" data-bs-target="#reg-modal1">
+                                            Leer terminos y condiciones.
+                                         </a>
+                                    </div>
+                                </div>
+                                <!-- </div>OK -->
+
+                                <div class="col-12">
+                                    <button class="btn btn-primary" onclick="validation(); return captcha()"  type="submit">Siguiente</button> 
+                                </div>
+                                
+                                <!-- Fecha invalida -->
+                                <div id="alertDays1" style="display: none;">
+                                    <i class="bi bi-exclamation-triangle"></i> <p> <small style="color: #d61406">
+                                         <em><b>Importante:</b>La fecha de salida no puede ser menor a la de ingreso al país</p></em></small>
+                                </div>
+                                <div id="alertSsn1" style="display: none;">
+                                    <i class="bi bi-exclamation-triangle"></i> <p> <small style="color: #d61406">
+                                         <em><b>Importante:</b>Verifique el SSN y el campo de confirmación</p></em></small>
+                                </div>
+
+
+                                          <!-- modal terminos y condiciones -->
+
+                                        <!-- modal terminos y condiciones -->
+                                                <!-- Button trigger modal -->
+                                        
+
+                                        <!-- <a href="#" data-toggle="modal" data-target="#bannerformmodal">Modal</a> -->
+                                        
+                                        <!-- Modal -->
+
+                                        <div class="modal fade" id="reg-modal1" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="modal-title">Importante</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Al enviar este formulario esta aceptando los terminos y condiciones del uso de la herramienta,  asi como la politica de tratamiento de datos personales; y dando aviso al tratamiento de datos personales. 
+                                                        Recuerde que usted es el unico responsable del contenido suministrado, el cual es reflejado en los formularios
+                                                        requeridos para su presentación de impuestos. Click en los siguientes vinculos para acceder a ellos:</p>
+
+                                                    <li class="mb-2"><a href="./assets/legal/terminos.pdf" 
+                                                        target="_blank" rel="noopener noreferrer">Terminos y condiciones</a></li>
+                                                    <li class="mb-2"><a href="./assets/legal/POLÍTICA DE TRATAMIENTO DE DATOS PERSONALES AUROTAX.pdf" 
+                                                         target="_blank" rel="noopener noreferrer">Politica tratamiento de datos</a></li>
+                                                    <li class="mb-2"><a href="./assets/legal/AVISO Y AUTORIZACIÓN PARA EL TRATAMIENTO DE DATOS PERSONALES AUROTAX.pdf" 
+                                                        target="_blank" rel="noopener noreferrer">Aviso para el tratamiento de datos personales</a></li>
+                                                </div>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal" data-bs-toggle="modal" data-bs-target="#reg-modal1">Cerrar</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <!-- modal terminos y condiciones -->
+
+                             <!-- modal terminos y condiciones -->
+                             <hr>
+                             <hr>
+                                
+                            </form>
+                        
+
+                    </hr>
+            </div>
+
+            <!-- fin info General -->
+
+            <!-- inicio finanzas -->
+            <P></P>
+            <P></P>
+            <div class="container mt-4">
+                <div class="row" >
+                    <div class="col-md-8 offset-md-2">
+
+                            <div id="finanzas">
+                            <div class="alert alert-success" role="alert">
+                                <h1><span class="form-label-inline"></span> Hola <span style="font-weight: bold;" id="nameLabel"></span></h1>
+                                <p>En esta sección vamos a reportar los Ingresos recibidos durante el año 2022. 
+                                </p>
+                            </div> 
+
+                        <div>
+                            <h3>Parte 2. Información Finaciera</h3>
+                           
+                        </div>
+                            <hr>
+                        <form id="InfoFinanciera" novalidate>
+                            
+    
+                            <div class="accordion" id="accordionExample">
+                                
+                                <div class="accordion-item" id="collapseIngresos" style="display:block;">
+                                    <h2 class="accordion-header" id="headingOne">
+                                      <button class="accordion-button" style="background-color:#198754;" id="collapse1"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                          
+                                          <h5 style="color: #fff;">2.1 Detalle de Ingresos Anuales <span><small size="3" style="color: #fff;"> (Presionar para adicionar ingresos)</small></span> </h5>  
+                                          
+                                      </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                      <div class="accordion-body">
+                                          <div class="row mb-3">
+  
+                                              <div class="container-fluid">
+  
+                                                  <div class="row">
+                                          
+                                              <span>Si desconoce como calcular tus ingresos anuales presiona<button type="button" class="btn btn-link border-primary" id="btnHelpIncome">aquí</button>para estimarlos.</span> <span></span>
+                                          
+                                              <div id="helpIncome" style="display: none;" class="card border-primary">
+  
+                                                  <P>La formula es sencilla. El sistema le sugiere el número de semanas(A) //el cual puedes editar//
+                                                       basado en la fecha de ingreso y salida del país, y este se multiplica por el ingreso semanal(B). AxB=C.</P>
+                                          
+                                                  <div>
+                                                  
+                                                  <div>
+                                                      <div class="col-sm-8">
+                                                      <label for="weeksHelp" class="form-label-inline">A. Numero de semanas que laboraste:</label>
+                                                      </div>
+                                                      <div class="col-sm-2">
+                                                           <input type="number" class="form-control" 
+                                                           id="weeksHelp" name="weeksHelp" min="0" max="52" onchange="helpIncome();sumIncome()">
+                                                      </div>
+                                                      <div class="col-sm-6">
+                                                          <small> <span for="weeksHelp"><strong>Nota: </strong>el sistema sugiere </span><span class="form-label-inline"style="color: #d61406"></span><strong style="color:
+                                                              #d61406"></strong><span style="color: #d61406" style="font-weight: bold;" id="totalWeekHelp"></span><span> semanas laboradas basado en la permanencia en el país. Puedes editar la cantidad o simplemente continua.</span> 
+                                                              </small>
+                                                      </div>    
+                                                  </div>
+                                                  <hr>
+                                                  <div class="col-sm-7">
+                                                      <label for="wageHelp" class="form-label-inline">B. Salario semanal</label>
+                                                      <div class="col-sm-5">
+                                                          <input type="number" class="form-control" min="0" id="wageHelp" onchange="helpIncome();sumIncome();rest();showTotalHelpIncome()">
+                                                      </div>
+                                                  <small> <span><strong>Nota: </strong>usualmente el salario semanal inicia desde $195 </span></small>
+                                                    </div>  
+                                                    <hr>
+                                                    <div class="col-sm-4" id="incomeHelpDiv" style="display: none;">
+                                                      <label for="incomeHelp" class="form-label-inline" style="font-weight: bold">C. Ingreso anual:</label>
+                                                      <div class="col-sm-6">
+                                                          <input type="number" class="form-control" id="incomeHelp" oninput="helpIncome()" onchange="sumIncome()">
+                                                      </div>
+                                                    </div> 
+                                                    <p></p> 
+                                                    <div>
+                                                      <button type="button" class="btn btn-secondary" style="background-color: #4ab563;" 
+                                                      onclick="ocultarEstimador();sumIncome()" >Calcular Ingresos</button>
+                                                    </div>
+                                                  </div>                                                
+                                              </div>                                        
+                                              </div>                                
+                                          </div>
+                                              <div class="col-md-4" id="ingresosDiv">
+                                                  <div>
+                                                      <label for="wage" class="form-label-inline">Ingreso Anual por concepto de salario</label>
+                                                      <input type="number" class="form-control income-amount" data-testid="currency-input" 
+                                                      value inputmode="numeric" id="wage" name="wage" onkeyup="sumIncome(),rest()" onkeydown="filtro()" onchange="sumIncome(),rest()"
+                                                      onblur="this.value = roundTax1(this.value);" placeholder="$" min="0" required>
+                                                  </div>
+                                                  
+                                                  <div>
+                                                      <label for="otherIncome" class="form-label-inline">Otros Ingresos</label>
+                                                      <input type="number" class="form-control income-amount" data-testid="currency-input" 
+                                                      value inputmode="numeric" id="otherIncome" name="otherIncome" onkeyup="sumIncome(),rest()" 
+                                                      onblur="this.value = roundTax1(this.value);" placeholder="$" min="0" required>
+                                                      <label for="otherIcome"><small>Ingrese otros ingresos relacionados a su actividad tales como bonos, tips, etc.</small></label>
+                                                  </div>
+  
+                                              </div>
+  
+                                              
+                                              <hr>
+                                          </div>
+                                       </div>
+                                   </div>
+  
+                                   <!-- totoal -->
+                                  <div class="row mb-3" id="totalIncomeDiv" style="display:none;">
+                                      <div class="col-md-3">
+                                      <div  style="display:none;">
+                                          <span class="form-label-inline" style="font-weight: bold;"></span>
+                                          Total ingresos a declarar: $<span id="totalIncome" style="font-weight: bold;"></span>
+                                      </div> 
+  
+                                      <div hidden>
+                                          <button type="button" class="btn btn-secondary" style="background-color: #2e9263;" 
+                                          onclick="hidecollapse()" id="btnNextIncome" disabled>Continuar</button>
+                                          
+                                      </div>
+  
+  
+  
+                                      <div >
+                                          <label for="totalI" class="form-label-inline">Total Ingreso anual:</label>
+                                          <input type="number" class="form-control pdfValues2" data-testid="currency-input" 
+                                          value inputmode="numeric" id="totalI" onkeyup="sumIncome()" placeholder="$" readonly style="font-weight: bold;">
+                                      </div>
+                                      </div>
+                                      <!-- funcion Sumar  -->
+                                      <script type="text/javascript">
+                                          function sumIncome() {
+                                              var totalI = 0;
+                                              $(".income-amount").each(function sumIncome() {
+                                                  if (isNaN(parseFloat($(this).val()))) {
+                                                  totalI += 0;
+                                                  } else {
+                                                  totalI += parseFloat($(this).val());
+                                                  }
+                                              
+                                              });
+                                              //alert(total);
+                                              document.getElementById('totalIncome').innerHTML = totalI;
+                                              document.getElementById('totalIncomeSp').innerHTML = totalI;
+                                              document.getElementById('totalI').value = totalI;
+                                              showTotalIncome();
+                                              }
+                                      </script>                                        
+                                      </div>
+                                  <!-- total -->
+                                   
+                               </div>
+
+                                
+                            
+                            <!-- Finaliza acordeon ingresos  -->
+    
+                            <div class="accordion-item" hidden>
+                                <div class="accordion-header" id="headingTwo">
+                                  <button class="accordion-button border border-info collapsed" style="background-color: #0d6efd;" id="collapse2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <div>
+                                    <h5 style="color:#fff;" style="line-height: 100%">2.2 Detalle de Gastos Anuales<small>(Presionar para adicionar gastos)</small> </h5>
+                                    
+                                    </div>
+                                </button>
+
+                                
+                                </div>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                  <div class="accordion-body">
+
+                                    <p>Se deben reportar gastos efectivamente pagados y asociados con la actividad generadora de ingresos</p>
+    
+    
+                                    <div class="col-md-4">
+                                        
+                                    <div>
+                                        <label for="transport" class="form-label-inline">1.Transporte</label>
+                                        <input type="number" class="form-control expense-amount pdfValues2" data-testid="currency-input" 
+                                        value inputmode="numeric" id="transport" name="transport" name="transport" onkeyup="sumExpense(), rest()"
+                                        onblur="this.value = roundTax1(this.value);" placeholder="$" min="0" value="0">
+                                    </div>
+                                    <div>
+                                        <label for="education" class="form-label-inline">2.Educación /formación profesional</label>
+                                        <input type="number" class="form-control expense-amount pdfValues2   " data-testid="currency-input" 
+                                        value inputmode="numeric" id="education" name="education" onkeyup="sumExpense(), rest()" 
+                                        onblur="this.value = roundTax1(this.value);" placeholder="$" min="0" value="0">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="food" class="form-label-inline">3.Alimentacion</label>
+                                        <input type="number" class="form-control expense-amount pdfValues2" data-testid="currency-input" 
+                                        value inputmode="numeric" id="food" name="food" onkeyup="sumExpense(), rest()" 
+                                        onblur="this.value = roundTax1(this.value);" placeholder="$" min="0" value="0">
+                                    </div>
+                                    <div>
+                                        <label for="entertainment" class="form-label-inline">4.Viajes</label>
+                                        <input type="number" class="form-control expense-amount pdfValues2" data-testid="currency-input" 
+                                        value inputmode="numeric" id="entertainment" name="entertainment" onkeyup="sumExpense(), rest()" 
+                                        onblur="this.value = roundTax1(this.value);"placeholder="$" min="0" value="0">
+                                    </div>
+                                    <div>
+                                        <label for="tips" class="form-label-inline">5.Comisiones y fees</label>
+                                        <input type="number" class="form-control expense-amount pdfValues2" data-testid="currency-input" 
+                                        value inputmode="numeric" id="tips" name="tips" onkeyup="sumExpense(), rest()"
+                                         onblur="this.value = roundTax1(this.value);" placeholder="$" min="0" value="0">
+                                    </div>
+                                    <div>
+                                        <label for="car" class="form-label-inline">6.Asesorias y servicios profesionales</label>
+                                        <input type="number" class="form-control expense-amount pdfValues2" data-testid="currency-input" 
+                                        value inputmode="numeric" id="car" name="car" onkeyup="sumExpense(), rest()" 
+                                        onblur="this.value = roundTax1(this.value);" placeholder="$" min="0" value="0">
+                                    </div>
+                                    <div>
+                                        <label for="supply" class="form-label-inline">7.Libros e insumos para el trabajo</label>
+                                        <input type="number" class="form-control expense-amount pdfValues2" data-testid="currency-input" 
+                                        value inputmode="numeric" id="supply" name="supply" onkeyup="sumExpense(), rest()" 
+                                        onblur="this.value = roundTax1(this.value);" placeholder="$" min="0" >
+                                    </div>
+                                    <div>
+                                        <label for="medicalExpenses" class="form-label-inline">8.Seguros diferentes de seguros de salud.</label>
+                                        <input type="number" class="form-control expense-amount pdfValues2" data-testid="currency-input" 
+                                        value inputmode="numeric" id="health" name="health" onkeyup="sumExpense(), rest()"
+                                         onblur="this.value = roundTax1(this.value);" placeholder="$" min="0"value="0">
+                                    </div>
+
+                                </div>
+                                <hr>
+                                  </div>
+                                </div>
+                                <div class="row mb-3" id="totalExpensesDiv" style="display:none;">
+                                    <div class="col-md-4">
+                                    <div hidden>
+                                        <span class="form-label-inline"></span> Total Gastos a Declarar: $<span style="font-weight: bold;" id="totalExpenses"></span>
+                                        
+                                    </div> 
+                                    <div >
+                                        <label for="totalE" class="form-label-inline">Total gastos a declarar:</label>
+                                        <input type="number" class="form-control pdfValues2" data-testid="currency-input" 
+                                        value inputmode="numeric" id="totalE" onkeyup="sumExpense()" placeholder="$" readonly style="font-weight: bold;" value="0">
+                                    </div>
+                                    <!-- funcion Sumar Gastos  -->
+                                    <script type="text/javascript">
+                                        function sumExpense() {
+                                
+                                  var totalE = 0;
+                                  $(".expense-amount").each(function sumExpense() {
+                                    if (isNaN(parseFloat($(this).val()))) {
+                                      totalE += 0;
+                                    } else {
+                                      totalE += parseFloat($(this).val());
+                                    }
+                                
+                                  });
+                                  //alert(total);
+                                  document.getElementById('totalExpenses').innerHTML = totalE;
+                                  document.getElementById('totalExpensesSp').innerHTML = totalE;
+                                  document.getElementById('totalE').value = totalE;
+                                  showTotalExpenses();
+                                }
+                                    </script>
+                                    </div>
+        
+                                </div>
+
+                            </div>
+    
+                            </div>                            
+                        </form>
+                        <p> 
+                        </p>
+                        <section class="">
+
+                            <div class="modal-footer">
+                            <div>
+                                <button type="button" class="btn btn-primary" onclick=liquidar2()>Calcular impuestos</button>
+                            </div>
+                            <div>
+                            <button class="btn btn-secondary" onclick="showGeneral()" type="button"> Atrás</button>
+                            </div>
+
+                        </div>
+                        </section>
+                        <p> 
+                        </p>
+                        <p> 
+                        </p>
+
+                            </div>
+                <!-- end finanzas -->
+                            <div id="resumen">
+
+                                <!-- test modal -->
+            
+                                <!-- financie summary / modal trigger -->
+                                <div class="alert alert-success" role="alert">
+                                    <h1><span class="form-label-inline"></span> Almost done!!! <span style="font-weight: bold;" id="nameLabel1"></span></h1>
+                                    <p>En esta sección debemos verificar lo siguiente:
+                                        <ul>
+                                            <li>(+)Ingresos</li>
+                                            <li>(-)Impuestos</li>
+                                        </ul>
+
+                                    Si desea generar alguna modificación de los ingresos reportados, presione "Atrás" y proceda a realizar
+                                    el ajuste correspondiente. En caso de inquietudes, no dude en enviar un mensaje al administrador.
+
+                                       
+                                    </p>
+                                </div> 
+
+                                <div>
+                                    <h3>Parte 3. Liquidación de impuestos</h3>
+                                   
+                                </div>
+
+                                    <section class="bg-light" >
+                                        <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-8 text-center">
+                                                    <div><i class="fa-solid fa-scale-balanced"></i></div>
+                                                
+                                                <h2>Resumen</h2>
+                                                <hr/>
+                                            </div>
+                                            <div class="col-md-8 justify-text-center">
+                                                <span class="summary-symbol"></span>
+                                                
+                                                <p class="lead">Relación de ingresos para el calculo de impuestos federales:</p>
+                                            <div>                                                                        
+                                                <hr>                                  
+                                                <div class="container-center">
+                                                    <div class="row">
+                                                    <div class="col-6 col-sm-5"><span class="form-label-inline" style="font-weight: 
+                                                    bold;"></span>(+)<strong>Ingresos </strong><span style="font-weight: bold;"></span></div>
+                                                    <div class="col-6 col-sm-4"><span class="form-label-inline" style="font-weight: 
+                                                    bold;"></span><strong>$</strong><span id="totalIncomeSp" style="font-weight: bold;"></span></div>
+                                                
+                                                    <!-- Obligar a las siguientes columnas a pasar a una nueva línea -->
+                                                    <div class="w-100"></div>
+                                                    <div class="col-6 col-sm-5" hidden >
+                                                        <span class="form-label-inline" style="font-weight: bold;"></span>(-)<strong>Gastos</strong><span></span>
+                                                    </div>
+                                                    <div class="col-6 col-sm-4" hidden>
+                                                        <span class="form-label-inline" style="font-weight: bold;"></span><strong>$</strong><span  id="totalExpensesSp" style="font-weight: bold;"></span>
+                                                    <hr>  
+                                                    </div>                                       
+
+                                                    <div class="col-6 col-sm-5" hidden>
+                                                        <span class="form-label-inline"></span>(=)<strong> Ingreso Neto</strong><span style="font-weight: bold;"></span>  
+                                                    </div>
+                                                    <div class="col-6 col-sm-4" hidden>
+                                                        <span class="form-label-inline"></span><strong>$</strong><span style="font-weight: bold;" id="profit"></span> 
+                                                        
+                                                    </div>
+                                                    <p></p>
+            
+                                                    <hr>
+                                                    <hr>
+            
+                                                    <p class="lead">Impuestos federales del periodo:</p>
+                                                    
+                                                    <!-- federal income -->
+            
+                                                    <div class="w-100"></div>
+                                                    <div class="col-6 col-sm-5">
+                                                        <span class="form-label-inline"></span>(=)<strong> *Tax SE (Si Aplica)</strong><span style="font-weight: bold;"></span>  
+                                                    </div>
+                                                    <div class="col-6 col-sm-4">
+                                                        <span class="form-label-inline"></span><strong>$</strong><span style="font-weight: bold;" id="selfEmploymentTax"></span>                                           
+                                                    </div>
+            
+                                                    <div class="w-100"></div>
+                                                    <div class="col-6 col-sm-5">
+                                                        <span class="form-label-inline"></span>(=)<strong> Otros impuestos</strong><span style="font-weight: bold;"></span>  
+                                                    </div>
+                                                    <div class="col-6 col-sm-4">
+                                                        <span class="form-label-inline"></span><strong>$</strong><span style="font-weight: bold;" id="otherTax"></span> 
+                                                        <hr>  
+                                                    </div>
+            
+                                                    <div class="w-100"></div>
+                                                    <div class="col-6 col-sm-5">
+                                                        <span class="form-label-inline" style="color: #d61406"></span><strong style="color: #d61406">(=)Total Impuestos a pagar</strong><span style="color: #D2691E" style="font-weight: bold;"></span>  
+                                                    </div>
+                                                    <div class="col-6 col-sm-4">
+                                                        <span class="form-label-inline"style="color: #d61406"></span><strong style="color: #d61406">$</strong><span style="color: #d61406" style="font-weight: bold;" id="totalTax"></span> 
+                                                        <hr>  
+                                                    </div>
+                                                    <hr> 
+                                                    </div>
+
+
+
+                                                    <hr>
+                                                    <small>*Tax Self-Employment no aplica para tu caso.</small>
+
+                                                    </div>
+                                                </div>
+                                            <!-- funcion Sumar Gastos  -->
+                                            <script type="text/javascript">
+                                                    function rest() {
+                                                        var ingreso = document.getElementById('totalI').value;
+                                                        var egresos = document.getElementById('totalE').value;
+                                                        resultado = ingreso - egresos; 
+                                                        //alert(total);
+                                                        document.getElementById('profit').innerHTML = resultado;}
+                                            </script>
+                                            </div> 
+                                            <p></p>
+                                            <p></p>
+                                        
+                                            <div class="col-md-10 text-center">
+                                            <div>
+                                            <button class="pull-left btn btn-secondary" onclick="hideGeneral()" 
+                                                type="button"> Atrás</button>
+                                            </div>
+                                            <div>
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">
+                                                Siguiente
+                                            </button>
+                                            </div>
+                                            <!-- <button class="pull-left btn btn-primary" onclick="hideGeneral()" type="button"> Siguiente</button> -->
+                                            </div>
+            
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </section>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+            
+                                <!-- Modal -->
+            
+                                <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modal-title">Importante!!!</h5>
+                                            <button type="button" class="btn-close" onclick="recargar()" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <P>Antes de generar tu declaracion de impuestos; si desea hablar con un especialista y revisar su declaracion haga click <a href="https://api.whatsapp.com/send/?phone=573167782676&text=Hola+%2C+necesito+ayuda+con+el+proceso&type=phone_number&app_absent=0">aqui</a>.</P>
+                                            <p>Al enviar este formulario esta aceptando los terminos y condiciones del uso de la herramienta. 
+                                                Recuerde que usted es el unico responsable del contenido suministrado, el cual es reflejado en los formularios requeridos para su presentacion de impuestos del periodo fiscal 2022.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-bs-toggle="modal" onclick="recargar()" data-bs-target="#reg-modal">Regresar</button>
+                                        <!-- <button type="button" class="btn btn-primary" onclick="postInfo2()" id="sendData2">Generar formularios</button> -->
+                                        <button type="button" class="btn btn-primary" onclick="fillForm1()" id="sendData2">Generar formularios</button>
+
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!-- tes modal -->
+            
+                                <script>
+                                    function filtro()
+                                    {
+                                    var tecla = event.key;
+                                    if (['p','e'].includes(tecla))
+                                    event.preventDefault()
+                                    }
+                                </script>
+
+                                <!-- calculadora -->
+                                <div class="row mb-3" hidden>
+                                    <div class="col-md-4">
+                                        
+                                    <label for="otherExpenses" class="form-label-inline">Otros Gastos</label>
+                                    <input type="number" class="pdfValues2" id="otherExpenses" name="otherExpenses" readonly>
+                                    
+                                    <label for="netProfit">NetProfit</label>
+                                    <input type="number" class="pdfValues2" name="netProfit" readonly id="netProfit" value="0">
+                                    <label for="profitAdjusted">Profit Adjusted</label>
+                                    <input type="number" class="pdfValues2" name="profitAdjusted"  readonly id="profitAdjusted" value="0">
+                                    <label for="deductionSelfEmp"> Deduction SE</label>
+                                    <input type="number" class="pdfValues2" name="deductionSelfEmp"  readonly id="deductionSelfEmp" value="0">
+                                    <label for="taxOne"> Tax One 12%</label>
+                                    <input type="number" class="pdfValues2" name="taxOne"  readonly id="taxOne" value="0">
+                                    <label for="taxTwo"> Tax Two 2.4%</label>
+                                    <input type="number" class="pdfValues2" name="taxTwo" readonly id="taxTwo" value="0">
+                                    <label for="totalTaxPartOne"> Total Impuestos SE</label>
+                                    <input type="number" class="pdfValues2" name="totalTaxPartOne" readonly id="totalTaxPartOne" value="0">
+                                    <label for="deductionSelfEmpTax"> Deduction SE (50% TAX)</label>
+                                    <input type="number" class="pdfValues2" name="deductionSelfEmpTax" readonly id="deductionSelfEmpTax" value="0">
+                                    <label for="baseAdjusted"> Base Ajustada</label>
+                                    <input type="number" class="pdfValues2" name="baseAdjusted" readonly id="baseAdjusted" value="0">
+                                    <label for="taxPartTwo"> Tax base ajustada 10%</label>
+                                    <input type="number"  class="pdfValues2" name="taxPartTwo" readonly id="taxPartTwo" value="0">
+                                    <label for="totalTaxYear">Total Impuestos</label>
+                                    <input type="number" class="pdfValues2" name="totalTaxYear" readonly id="totalTaxYear" value="0">
+                                    </div>
+                                </div>
+                                <!-- calculadora -->
+
+                                <!-- relacion de gastos -->
+
+                                <!-- <div class="row mb-3" hidden>
+                                    <div class="col-md-4">
+                                    <label for="netProfit">NetProfit</label>
+                                    <input type="number" class="pdfValues2" name="netProfit" readonly id="netProfit">
+                                    </div>
+                                </div> -->
+
+
+
+                                <!-- relacion de gastos -->
+
+                            </div>
+    
+                        
+                    </div>
+                    </div>
+                <!-- fin financiera -->
+                <div class="container">
+                    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                      <div class="col-md-4 d-flex align-items-center">
+                        <a href="index.html" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                          <svg class="bi" width="30" height="24"><use xlink:href="index.html"></use></svg>
+                        </a>
+                        <span class="mb-3 mb-md-0 text-muted">© 2022 AuroTax.com</span>
+                      </div>
+                    </footer>
+                  </div>
+
+
+                      <!-- Back to top button -->
+    <div>
+        <a id="btnScroll"></a>
+  
+  <script>
+    var btn = $('#btnScroll');
+  
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 300) {
+      btn.addClass('show');
+    } else {
+      btn.removeClass('show');
+    }
+  });
+  
+  btn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
+  });
+  </script>
+  
+  <style>
+    #btnScroll {
+    display: inline-block;
+    background-color: #143399;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 120px;
+    right:50px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #btnScroll::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+  }
+  #btnScroll:hover {
+    cursor: pointer;
+    background-color: #333;
+  }
+  #btnScroll:active {
+    background-color: #555;
+  }
+  #btnScroll.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Styles for the content section */
+  
+  .content {
+    width: 77%;
+    margin: 50px auto;
+    font-family: 'Merriweather', serif;
+    font-size: 17px;
+    color: #6c767a;
+    line-height: 1.9;
+  }
+  @media (min-width: 500px) {
+    .content {
+      width: 43%;
+    }
+    #button {
+      margin: 30px;
+    }
+  }
+  .content h1 {
+    margin-bottom: -10px;
+    color: #03a9f4;
+    line-height: 1.5;
+  }
+  .content h3 {
+    font-style: italic;
+    color: #96a2a7;
+  }
+  </style>
+  
+      </div>
+
+                <div name="whatsapp">
+                    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                    <div>
+                    <a href="https://wa.me/573167782676?text=Hola%20,%20necesito%20ayuda%20con%20el%20proceso" 
+                    class="whatsapp" target="_blank" rel="noopener noreferrer"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+                    </div>
+
+                <style>
+                    .whatsapp {
+                    position:fixed;
+                    width:60px;
+                    height:60px;
+                    bottom:40px;
+                    right:40px;
+                    background-color:#25d366;
+                    color:#FFF;
+                    border-radius:50px;
+                    text-align:center;
+                    font-size:30px;
+                    z-index:100;
+                    }
+
+                    .whatsapp-icon {
+                    margin-top:13px;
+                    }
+                </style>
+                </div>
+
+
+
+
+        
+
+        </div>
+    </div>
+</body>
+
+</html>

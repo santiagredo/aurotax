@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuroTax - Tutoriales</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon3.ico" sizes="96x96">
+     <!-- CSS Bootstrap -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+     <!-- Bootstrap -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+     <!-- JQUERY -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script type="text/html" src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+     <!-- NavBar -->
+     <nav class="navbar navbar-expand-lg fixed-top" style="background-color:#d3e3fa">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html" translate="no"><i class="bi bi-x-diamond-fill"></i>AuroTax</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item"> 
+              <a class="nav-link active" href="https://wa.me/573167782676?text=Hola%20,%20necesito%20ayuda%20con%20el%20proceso"
+              target="_blank" rel="noopener noreferrer">Agenda una cita</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="tutoriales.html"> <b>Tutoriales</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="market.html">Plan de referidos</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Contactenos
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://wa.me/573167782676?text=Hola%20,%20necesito%20ayuda%20con%20el%20proceso" 
+                  target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> Whatsapp</a></li>
+                <li><a class="dropdown-item" href="https://www.facebook.com/cristianjulian.aricapafranco" target="_blank"
+                   rel="noopener noreferrer"> 
+                  <i class="bi bi-facebook"></i> Facebook</a></li>
+                <li><a class="dropdown-item" href="https://www.instagram.com/iam_aurotax/?hl=es" target="_blank" 
+                  rel="noopener noreferrer">
+                  <i class="bi bi-instagram"></i> Instragram</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Otras Opciones
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://152.70.118.197:8383/login">Admin</a></li>
+              </ul>
+            </li>
+            <li class="nav-item" hidden>
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+
+   <!-- lenguaje  -->
+
+<div class="navbar-nav ml-auto action-buttons">
+    <style type="text/css">
+
+     /*google translate Dropdown */
+     
+     #google_translate_element select{
+     background:#6e3ef3;;
+     color:#ffffff;
+     border: none;
+     border-radius:3px;
+     padding:6px 8px
+     }
+     
+     /*google translate link | logo */
+       .goog-logo-link{
+       display:none!important;
+       }
+     .goog-te-gadget{
+     color:transparent!important;
+     }
+     
+     /* google translate banner-frame */
+     
+     .goog-te-banner-frame{
+     display:none !important;
+     }
+     
+     #goog-gt-tt, .goog-te-balloon-frame{display: none !important;}
+    .goog-text-highlight { background: none !important; box-shadow: none !important;}
+     
+     body{top:0!important;}
+       </style>
+     
+     <div id='google_translate_element' class="nav-item dropdown"></div>
+     <script>
+     function googleTranslateElementInit() {
+     new google.translate.TranslateElement({
+     pageLanguage: 'es',
+     autoDisplay: 'true',
+     includedLanguages: 'en,es,fr,it,pt,de',
+     layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+     }, 'google_translate_element');
+     }
+     </script>
+     <script src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
+
+</div>
+
+     <!-- lenguaje  -->
+
+           <!-- Sign up  -->
+          <div class="navbar-nav ml-auto action-buttons">
+              
+              <div class="nav-item dropdown">
+                  <a href="https://152.70.118.197:8383/login" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn" aria-expanded="true">Log In</a>
+                  <div class="dropdown-menu action-form ">
+                          <input type="button" class="btn btn-primary btn-block" value="Login">    
+                  </div>
+              </div>
+              <!-- Sign up  -->
+          </div>
+
+          <div>
+
+        </div>
+      </div>
+    </nav>
+
+      <div class="container mt-4">
+        <div class="row">
+    <div class="mb-3 fw-normal mt-5 text-center">
+        <h1 class="display-4 fw-normal">Bienvenid@</h1>
+        <h4>Si llegaste hasta acá, es porque ya tienes tus formularios en el correo y estamos a nada de terminar.
+           Sigue las siguientes instrucciones:</h4>
+      </div>
+
+      <section>
+        <div class="alert alert-primary text-center" role="alert">
+        </div>
+
+      </section>
+
+      <link rel="icon" type="image/x-icon" href="./assets/images/favicon3.ico" sizes="96x96">
+
+
+      <div class="container">
+
+        <div class="col-md-8 offset-md-2" >
+
+        <div class="list-group w-auto">
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img src="./assets/images/print.png" alt="twbs" width="32" height="32" class="flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Revisa e imprime los formularios</h6>
+                <p class="mb-0 opacity-75">A tu correo electronio llegara un correo con los formularios a enviar.</p>
+                <p>1. Form 1040NR,
+                  2. Schedule OI,
+                  3. Schedule C,
+                  4. Schedule SE,
+                  5. Schedule 1,
+                  6. Schedule 2.
+                  </p>
+                  <p class="mb-0 opacity-75"> Nota: <small>El numero de archivos varia segun el caso. 
+                    Para las Aupair-IRS revisar la carpeta de descargas de su ordenador.</small></p>
+              </div>
+              <b class="text-nowrap">1</b>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img  src="./assets/images/sign.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Revisar y firmar</h6>
+                <p class="mb-0 opacity-75">Firmar la pagina 2 de la forma 1040NR en el campo 
+                  “Sign here”. Firma y fecha (en formato MM/DD/AAAA).</p>
+                <img  src="./assets/images/firma.png" alt="twbs" width="300" height="74" class="flex-shrink-0">
+              
+              </div>
+              <b class="text-nowrap">2</b>
+            </div>
+          </a>
+          <a href="https://www.pay1040.com/#/payment/personal" class="list-group-item list-group-item-action d-flex gap-3 py-3" 
+          aria-current="true" class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer">
+            <img  src="./assets/images/pay.png"  alt="twbs" width="32" height="32" class="flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Pago</h6>
+                <p class="mb-0 opacity-75">click aquí para acceder al portal de 1040Pay y efectuar el pago. 
+                  Si tiene dudas no dude en contactarnos.</p>
+                  <p>A continuacion se da una guia de los campos a diligenciar.</p>
+                  <img  src="./assets/images/pay1040.png" alt="twbs" width="300" height="400" class="flex-shrink-0">
+              </div>
+              <b class="text-nowrap">3</b>
+            </div>
+          </a>
+          <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img  src="./assets/images/mail.png"  alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Envio</h6>
+                <p class="mb-0 opacity-75">En un sobre con estampilla debe enviar la totalidad de formularios debidamente firmados (vease paso 2) a la 
+                  siguiente Direccion:</p>
+
+                  <div  class="border border-success" style="border:#198754">
+                  <br>Department of the Treasury
+                  <br>Internal Revenue Service
+                  <br>Austin, Texas 73301-0215
+                </div>
+                  <p></p>
+                  <p><i class="bi bi-exclamation-triangle" style="color: #d61406"></i> <em><b style="color: #d61406">Importante: </b>El 18 de abril del 2023 es la fecha 
+                    limite para presentar y pagar los impuestos. termine el proceso a tiempo y Evitese sanciones.
+                     </p></em></small>
+              </div>
+              <b class="text-nowrap">4</b>
+            </div>
+          </a>
+        </div>
+
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+              <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© 2022 AuroTax.com</span>
+          </div>
+        </footer>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div>
+    <a id="btnScroll"></a>
+
+<script>
+var btn = $('#btnScroll');
+
+$(window).scroll(function() {
+if ($(window).scrollTop() > 300) {
+  btn.addClass('show');
+} else {
+  btn.removeClass('show');
+}
+});
+
+btn.on('click', function(e) {
+e.preventDefault();
+$('html, body').animate({scrollTop:0}, '300');
+});
+</script>
+
+<style>
+#btnScroll {
+display: inline-block;
+background-color: #143399;
+width: 50px;
+height: 50px;
+text-align: center;
+border-radius: 4px;
+position: fixed;
+bottom: 120px;
+right:50px;
+transition: background-color .3s, 
+  opacity .5s, visibility .5s;
+opacity: 0;
+visibility: hidden;
+z-index: 1000;
+}
+#btnScroll::after {
+content: "\f077";
+font-family: FontAwesome;
+font-weight: normal;
+font-style: normal;
+font-size: 2em;
+line-height: 50px;
+color: #fff;
+}
+#btnScroll:hover {
+cursor: pointer;
+background-color: #333;
+}
+#btnScroll:active {
+background-color: #555;
+}
+#btnScroll.show {
+opacity: 1;
+visibility: visible;
+}
+
+/* Styles for the content section */
+
+.content {
+width: 77%;
+margin: 50px auto;
+font-family: 'Merriweather', serif;
+font-size: 17px;
+color: #6c767a;
+line-height: 1.9;
+}
+@media (min-width: 500px) {
+.content {
+  width: 43%;
+}
+#button {
+  margin: 30px;
+}
+}
+.content h1 {
+margin-bottom: -10px;
+color: #03a9f4;
+line-height: 1.5;
+}
+.content h3 {
+font-style: italic;
+color: #96a2a7;
+}
+</style>
+
+  </div>
+
+
+      
+    <div name="whatsapp">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <div>
+        <a href="https://wa.me/573167782676?text=Hola%20,%20necesito%20ayuda%20con%20el%20proceso" 
+        class="whatsapp" target="_blank" rel="noopener noreferrer"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+        </div>
+
+    <style>
+        .whatsapp {
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#25d366;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        font-size:30px;
+        z-index:100;
+        }
+
+        .whatsapp-icon {
+        margin-top:13px;
+        }
+    </style>
+    </div>
+</body>
+</html>

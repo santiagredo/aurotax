@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuroTax</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon3.ico" sizes="96x96">
+
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/html" src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AWOW3nDVhidqWCbM8-h5yQUKYdCkP-gaer55ICPff0iMnzFwJGNNje1TtbYDd4UYnM04u1gHXhreZXvK&currency=USD"></script>
+    <script src="./indexPayPal.js"></script>
+
+</head>
+<body>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color:#d3e3fa">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html" translate="no"><i class="bi bi-x-diamond-fill"></i>AuroTax</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"><b>Home</b></a>
+              </li>
+
+              <li class="nav-item"> 
+                <a class="nav-link active" href="https://wa.me/573167782676?text=Hola%20,%20necesito%20ayuda%20con%20el%20proceso"
+                target="_blank" rel="noopener noreferrer">Agenda una cita</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="tutoriales.html">Tutoriales</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="market.html">Plan de referidos</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Contactenos
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="https://wa.me/573167782676?text=Hola%20,%20necesito%20ayuda%20con%20el%20proceso" 
+                    target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> Whatsapp</a></li>
+                  <li><a class="dropdown-item" href="https://www.facebook.com/cristianjulian.aricapafranco" target="_blank"
+                     rel="noopener noreferrer"> 
+                    <i class="bi bi-facebook"></i> Facebook</a></li>
+                  <li><a class="dropdown-item" href="https://www.instagram.com/iam_aurotax/?hl=es" target="_blank" 
+                    rel="noopener noreferrer">
+                    <i class="bi bi-instagram"></i> Instragram</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Otras Opciones
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="https://152.70.118.197:8383/login">Admin</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" hidden>
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+
+     <!-- lenguaje  -->
+
+<div class="navbar-nav ml-auto action-buttons">
+      <style type="text/css">
+
+       /*google translate Dropdown */
+       
+       #google_translate_element select{
+       background:#6e3ef3;;
+       color:#ffffff;
+       border: none;
+       border-radius:3px;
+       padding:6px 8px
+       }
+       
+       /*google translate link | logo */
+         .goog-logo-link{
+         display:none!important;
+         }
+       .goog-te-gadget{
+       color:transparent!important;
+       }
+       
+       /* google translate banner-frame */
+       
+       .goog-te-banner-frame{
+       display:none !important;
+       }
+       
+       #goog-gt-tt, .goog-te-balloon-frame{display: none !important;}
+      .goog-text-highlight { background: none !important; box-shadow: none !important;}
+       
+       body{top:0!important;}
+         </style>
+       
+       <div id='google_translate_element' class="nav-item dropdown"></div>
+       <script>
+       function googleTranslateElementInit() {
+       new google.translate.TranslateElement({
+       pageLanguage: 'es',
+       autoDisplay: 'true',
+       includedLanguages: 'en,es,fr,it,pt,de',
+       layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+       }, 'google_translate_element');
+       }
+       </script>
+       <script src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
+
+ </div>
+
+       <!-- lenguaje  -->
+  
+             <!-- Sign up  -->
+            <div class="navbar-nav ml-auto action-buttons">
+                
+                <div class="nav-item dropdown">
+                    <a href="https://152.70.118.197:8383/login" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn" aria-expanded="true">Log In</a>
+                    <div class="dropdown-menu action-form ">
+                            <input type="button" class="btn btn-primary btn-block" value="Login">    
+                    </div>
+                </div>
+                <!-- Sign up  -->
+            </div>
+
+            <div>
+  
+          </div>
+        </div>
+      </nav>
+
+      <div class="container py-3">
+      <header>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal mt-3">Bienvenid@</h1>
+          
+          <p class="fs-5 text-muted">Estamos para ayudarte y por ello te ofrecemos:</p>
+        </div>
+      </header>
+
+      <section >
+      
+        
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center align-items-center d-flex justify-content-center">
+
+          <div class="col" >
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Aupair IRS</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">Gratis<small class="text-muted fw-light"></small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Diligenciamiento forma 1040 y Anexos,</li>
+                  <li>Acompañamiento en el proceso (Aplican condiciones),</li>
+                  <li>Descarga inmediata.</li>
+                  <li>Guia para el envio y pago</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary" ><a class="dropdown-item" href="formOpt2.html">Click para Iniciar</a></button>
+              </div>
+            </div>
+          </div>
+            
+            <div class="col">
+                <div class="card mb-4  rounded-3 shadow-sm border-success">
+                  <div class="card-header py-3 text-bg-success border-success">
+                    <h4 class="my-0 fw-normal">Self-Employment (SE)</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$35.99</h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Diligenciamiento forma 1040 para SE,</li>
+                      <li>Acompañamiento en todo el proceso,</li>
+                      <li> <b>Genera ingresos en el plan de referidos.</b></li>
+                    </ul>
+                    <!-- <button type="button" class="w-100 btn btn-lg btn-success" ><a class="dropdown-item" href="formOpt1.html">Click para Iniciar</a></button> -->
+                    <div id="paypal-button-container"></div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+        </div>
+      </div>
+
+        
+      </section>
+
+      <div class="alert alert-primary mx-auto text-center" role="alert">
+        <div class="spinner-grow text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-secondary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-success" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+
+            <!-- card referidos -->
+      
+      <div class="card card-cover h-100 overflow-hidden text-bg-light rounded-4 shadow-lg">
+        <div class="card-header" style="background-color:#b2dfbc" >
+          <h3>Genera ingresos con nuestro plan de referidos</h3> 
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Plan de referidos</h5>
+          <p class="card-text">Conoce nuestro plan de referidos. Genera ingresos mientras ayudas a otros 
+            a conocer de nuestros beneficios. 5 USD por referido efectivo. </p>
+            <p class="mt-6"><small class="mt-10">Aplican terminos y condiciones.</small></p>
+          <a href="market.html" class="btn btn-primary" type="button">Click aqui</a>
+        </div>
+      </div>
+
+      <!-- card referidos -->
+
+
+      <div class="alert alert-primary mt-3 text-center" role="alert">
+      </div>
+
+      <h3 class="pb-2 border-bottom mt-5">Obten Self-Employment (SE) forms en tres simples pasos.</h3>
+
+      <div class="mt-3 text-center" role="alert">
+
+        <img src="./assets/images/Step.png" class="img-fluid" alt="Responsive image">
+
+
+      </div>
+
+    
+    
+
+
+
+      <!-- cards -->
+      <div class="container" id="cards">
+        <h2 class="pb-2 border-bottom mt-5">Unas de tantas razones para confiar en nosotros:</h2>
+    
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+          <!-- card 1 -->
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-light rounded-4 shadow-lg align-items-center">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-blue text-shadow-1">
+                <h3 class="pt-2 mt-auto display-4 lh-1 fw-bold">Despidete de lo complicado</h3>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="d-flex align-items-center justify-text-center me-3" style="color:#3c60e1">
+                    <h5>Olvidate de lo complicado que son los "Taxes".
+                    Te acompañamos paso a paso.</h5>
+                    <img src="./assets/images/chat.png" alt="Bootstrap" width="120" height="120">
+                  </li>
+                </ul>
+                <li class="d-flex align-items-center justify-text-center me-3" style="color:#081e6d">
+                  <h5><a href="https://wa.me/573167782676?text=Hola%20,%20necesito%20ayuda%20con%20el%20proceso" 
+                    target="_blank" rel="noopener noreferrer">Agenda una cita</a><h5>
+               </li>
+              </div>
+            </div>
+          </div>
+            <!-- card 1 -->
+              <!-- card 2 -->
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-light rounded-4 shadow-lg">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-blue text-shadow-1">
+                <h3 class="pt-1 mt-1 display-5 lh-1 fw-bold">Brindamos soluciones gratuitas a la comunidad</h3>
+                <li class="d-flex align-items-center me-3" style="color:#987ddc">
+                  <h5>El conocimiento esta para compartir.</h5>
+                  <img src="./assets/images/idea.png" alt="Bootstrap" width="120" height="120">
+                </li>
+                <li class="d-flex align-items-center justify-text-center me-3" style="color:#081e6d">
+                   <h5> <a href="formOpt2.html">Aupair-IRS es Free!</a><h5>
+                </li>
+              </div>
+            </div>
+          </div>
+            <!-- card 2 -->
+    
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-light rounded-4 shadow-lg">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                <h3 class="pt-1 mt-1 display-6 lh-1 fw-bold">La vida adulta no es facil, mucho menos cuando hay que pagar taxes!</h3>
+                <ul class="d-flex list-unstyled mt-2">
+                  <li class="d-flex align-items-center justify-text-center me-2" style="color: #6e3ef3">
+                    <h5>Es por ello que te guiamos para cuidar cada centavo.</h5>
+                    <img src="./assets/images/care.png" alt="Bootstrap" width="120" height="120">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- cards -->
+
+        <div class="container mt-10">
+         
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Aupair IRS ¿Que dice el IRS sobre el programa AUPAIR? </h5>
+                  <p class="card-text">En los Estados Unidos, el término ha llegado a tener un significado técnico limitado que describe una clase de Visitantes de
+                     Intercambio que vienen a los Estados Unidos bajo los auspicios de un programa administrado inicialmente por la Agencia de... </p>
+                  <a href="https://www.irs.gov/individuals/international-taxpayers/au-pairs" 
+                  class="btn btn-primary" target="_blank" rel="noopener noreferrer">Leer más</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">¿Que es Self-Employment Tax?</h5>
+                  <p class="card-text">El impuesto sobre el trabajo por cuenta propia es un impuesto que consta de los impuestos de Seguro 
+                    Social y de Medicare y que está destinado, principalmente, a las personas que trabajan por su propia cuenta. 
+                    Es similar a...</p>
+                  <a href="https://www.irs.gov/individuals/international-taxpayers/au-pairs" 
+                  class="btn btn-primary" target="_blank" rel="noopener noreferrer">Leer más</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+      <div class="container">
+        <footer class="py-5 my-4">
+          <h2 class="pb-2 border-bottom mt-1">Informacion de su interes:</h2>
+          <div class="row">
+          <div class="col-6 col-md-5">
+            <h5>Recursos</h5>
+              <ul class="list-unstyled text-small">
+                  <li class=""><a href="https://www.irs.gov/individuals/international-taxpayers/au-pairs" 
+                    class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer">Aupair IRS</a></li>
+                    <li class=""><a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes#:~:text=The%20self%2Demployment%20tax%20rate,for%20Medicare%20(hospital%20insurance)." 
+                      class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer">¿Que es Self-Employment Tax?</a></li>
+                      <li class=""><a href="https://www.ssa.gov/ssnumber/" 
+                        class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer">Obtener SSN</a></li>
+                <li class=""><a href="https://www.pay1040.com/#/payment/personal" 
+                  class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer">Hacer pago de impuestos - Pay1040</a></li>
+                <li class=""><a href="https://www.irs.gov/filing/where-to-file-forms-beginning-with-the-number-1"
+                  class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer">¿A donde enviar mis taxes?</a></li>
+                <li class=""><a href="https://www.irs.gov/instructions/i1040nr"
+                  class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer">About 1040 form</a></li>
+                  <li class=""><a href="https://sa.www4.irs.gov/irfof-tra/notice" 
+                    class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer">Solicite su certificado de impuestos- IRS</a></li>
+              </ul>
+            </div>
+
+            <div class="col-6 col-md-5">
+              <h5>Legal</h5>
+              <ul class="list-unstyled text-small">
+                <li class=""><a href="./assets/legal/terminos.pdf" 
+                  class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer">Terminos y condiciones del servicio</a></li>
+              <li class=""><a href="./assets/legal/POLÍTICA DE TRATAMIENTO DE DATOS PERSONALES AUROTAX.pdf" 
+                class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer">Politica tratamiento de datos</a></li>
+              <li class=""><a href="./assets/legal/AVISO Y AUTORIZACIÓN PARA EL TRATAMIENTO DE DATOS PERSONALES AUROTAX.pdf" 
+                class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer">Aviso para el tratamiento de datos personales</a></li>
+              </ul>
+              </div>
+
+
+            <div class="col-6 col-md-2">
+              <h5>Redes sociales</h5>
+              <ul class="list-unstyled text-small">
+                <li class=""><a href="https://wa.me/573167782676?text=Hola%20,%20necesito%20ayuda%20con%20el%20proceso" 
+                  class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> Whatsapp</a></li>
+              <li class=""><a href="https://www.facebook.com/cristianjulian.aricapafranco" 
+                class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i> Facebook</a></li>
+              <li class=""><a href="https://www.instagram.com/iam_aurotax/?hl=es"
+                class="nav-link p-0 text-active" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i> Instragram</a></li></a></li>
+              </ul>
+              </div>
+
+          </div>
+        
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p>© 2022 Aurotax.com - Derechos reservados.</p>
+          </div>
+
+          <div>
+
+          </div>
+
+        </footer>
+      </div>
+    </div>
+
+    <!-- Back to top button -->
+    <div>
+      <a id="btnScroll"></a>
+
+<script>
+  var btn = $('#btnScroll');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+</script>
+
+<style>
+  #btnScroll {
+  display: inline-block;
+  background-color: #143399;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 120px;
+  right:50px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#btnScroll::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#btnScroll:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#btnScroll:active {
+  background-color: #555;
+}
+#btnScroll.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styles for the content section */
+
+.content {
+  width: 77%;
+  margin: 50px auto;
+  font-family: 'Merriweather', serif;
+  font-size: 17px;
+  color: #6c767a;
+  line-height: 1.9;
+}
+@media (min-width: 500px) {
+  .content {
+    width: 43%;
+  }
+  #button {
+    margin: 30px;
+  }
+}
+.content h1 {
+  margin-bottom: -10px;
+  color: #03a9f4;
+  line-height: 1.5;
+}
+.content h3 {
+  font-style: italic;
+  color: #96a2a7;
+}
+</style>
+
+    </div>
+
+
+    <div name="whatsapp">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <div>
+        <a href="https://wa.me/573167782676?text=Hola%20,%20necesito%20ayuda%20con%20el%20proceso" 
+        class="whatsapp" target="_blank" rel="noopener noreferrer"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+        </div>
+
+    <style>
+        .whatsapp {
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#25d366;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        font-size:30px;
+        z-index:100;
+        }
+
+        .whatsapp-icon {
+        margin-top:13px;
+        }
+    </style>
+    </div>
+
+
+</body>
+</html>
