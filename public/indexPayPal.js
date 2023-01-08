@@ -1,8 +1,8 @@
 paypal
         .Buttons({
           // Sets up the transaction when a payment button is clicked
-          createOrder: function (data, actions) {
-            return fetch("/api/orders", {
+          createOrder: async function (data, actions) {
+            return await fetch("/api/orders", {
               method: "post",
               // use the "body" param to optionally pass additional order information
               // like product ids or amount
@@ -11,8 +11,8 @@ paypal
               .then((order) => order.id);
           },
           // Finalize the transaction after payer approval
-          onApprove: function (data, actions) {
-            return fetch(`/api/orders/${data.orderID}/capture`, {
+          onApprove: async function (data, actions) {
+            return await fetch(`/api/orders/${data.orderID}/capture`, {
               method: "post",
             })
               .then((response) => response.json())
