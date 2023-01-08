@@ -1,4 +1,10 @@
-const baseUrl2 = 'https://152.70.118.197:8383/';
+import {urlFrontSever} from "./config";
+import {urlBdSever} from "./config";
+
+//Urls para hacer peticiones al servidor
+const baseUrlBd = urlBdSever;
+const baseUrl2 = urlFrontSever;
+// const baseUrl2 = 'https://152.70.118.197:8383/';
 // const baseUrl2 = 'http://localhost:8383' 
 const postUrl2 = '/decrypted'
 
@@ -31,7 +37,8 @@ function findByIdDesencryted1(){
 
     $.ajax({
         type: "GET",
-        url: "http://155.248.236.50:8080/api/taxpayer/" + idTaxPayer,
+        url: baseUrlBd,
+        // url: "http://155.248.236.50:8080/api/taxpayer/" + idTaxPayer,
         dataType: "json",
         crossDomain: true,
         contentType: "application/json",
@@ -40,7 +47,7 @@ function findByIdDesencryted1(){
                 const data = JSON.parse(response.responseText);  
                 // console.log(data); 
                     const data2 = await getAllDecryptedData(data);
-                    console.log(data2);
+                     console.log("vamos bien");
 
                     document.getElementById('nameLabel3').innerHTML = `${data2.name}`
                     document.getElementById('lastNameLabel3').innerHTML = `${data2.lastName}`

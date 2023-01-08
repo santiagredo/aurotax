@@ -160,19 +160,29 @@
 
 <script>
 
+// instancia  
+//se debe comentar o descomentar la variable urlFronServer
+// const urlFrontSever = 'http://localhost:8383' 
 
-const ApiUrl = "http://155.248.236.50:8080/api/taxpayer/all";
+const urlFrontSever = 'https://152.70.118.197:8383';
+
+const urlBdSever = 'https://155.248.236.50:8080'
+
+
+// const ApiUrl = "http://155.248.236.50:8080/api/taxpayer/all";
+const ApiUrl = urlBdSever;
 
 async function findAll(){
    
     $.ajax({
         type: "GET",
-        url: ApiUrl,
+        url: ApiUrl + "/api/taxpayer/all",
         dataType: "json",
         crossDomain: true,
         contentType: "application/json",
         complete: async function(response){
             if(response.status ==200){
+                console.log(url)
                 const data = JSON.parse(response.responseText);    
                 $("tbody").html(""); 
                 for (let index = 0; index<data.length;index++){
@@ -201,7 +211,7 @@ function findAjax(){
 
     $.ajax({
         type: "GET",
-        url: ApiUrl,
+        url: ApiUrl + "/api/taxpayer/all",
         dataType: "json",
         crossDomain: true,
         contentType: "application/json",
@@ -233,7 +243,7 @@ function findById(idTaxPayer){
     
     $.ajax({
         type: "GET",
-        url: "http://155.248.236.50:8080/api/taxpayer/" + idTaxPayer,
+        url: ApiUrl+"/api/taxpayer/" + idTaxPayer,
         dataType: "json",
         crossDomain: true,
         // data: JSON.stringify(payer),
@@ -264,7 +274,8 @@ function findByIdDesencryted(){
 
     $.ajax({
         type: "GET",
-        url: "http://155.248.236.50:8080/api/taxpayer/" + idTaxPayer,
+        url: ApiUrl+"/api/taxpayer/" + idTaxPayer,
+        // url: "http://155.248.236.50:8080/api/taxpayer/" + idTaxPayer,
         dataType: "json",
         crossDomain: true,
         contentType: "application/json",
@@ -324,7 +335,7 @@ function findByIdDesencryted(){
 function deleteById(idTaxPayer){
     $.ajax({
         type: "DELETE",
-        url: "http://155.248.236.50:8080/api/taxpayer/"+idTaxPayer,
+        url: ApiUrl+"/api/taxpayer/"+idTaxPayer,
         dataType: "json",
         crossDomain: true,
         data: JSON.stringify({idTaxPayer:idTaxPayer}),
@@ -384,7 +395,7 @@ class payer{
 }
 
 //const baseUrl2 = 'http://localhost:8383' 
-const baseUrl2 = 'https://152.70.118.197:8383/' 
+const baseUrl2 = urlFrontSever
 const postUrl2 = '/decrypted'
 
 //Función para enviar la captura de valores del formulario al servidor
@@ -403,9 +414,6 @@ async function getAllDecryptedData(obj){
 
     //Respuesta del servidor. Recibe un objeto: {status: data}. Devuelve el mismo objeto enviado
     const data = await res.json();
-    // console.log("Aqui");
-    // console.log(data.status2);
-    // console.log("fin");
     return data.status2;
     
 

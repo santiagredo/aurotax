@@ -1,5 +1,9 @@
+import {urlFrontSever} from "./config";
+import {urlBdSever} from "./config";
+
 //Urls para hacer peticiones al servidor
-const baseUrl = 'https://152.70.118.197:8383';
+// const baseUrl = 'https://152.70.118.197:8383';
+const baseUrl = urlFrontSever;
 // const dotEnv = require("dotEnv")
 // const baseUrl = 'http://localhost:8383';
 const getUrl = '/get';
@@ -198,7 +202,8 @@ async function sendEncryptData(data){
     let botton =  document.getElementById("sendData")
     console.log(dataTosend);
     $.ajax({
-        url : 'http://155.248.236.50:8080/api/taxpayer/save',
+        url : urlBdSever +'/api/taxpayer/save',
+        // url : 'http://155.248.236.50:8080/api/taxpayer/save',
         type : 'POST',
         //dataType : 'json',
         data:dataTosend,
