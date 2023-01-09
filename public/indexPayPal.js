@@ -2,19 +2,13 @@ paypal
         .Buttons({
           // Sets up the transaction when a payment button is clicked
           createOrder: async function (data, actions) {
-            try {
-              return await fetch("/api/orders", {
-                method: "post",
-                // use the "body" param to optionally pass additional order information
-                // like product ids or amount
-              })
-                .then((response) => response.json())
-                .then((order) => order.id);
-                
-            } catch (error) {
-              console.log('Error coming from response')
-              console.log(error)
-            }
+            return await fetch("/api/orders", {
+              method: "post",
+              // use the "body" param to optionally pass additional order information
+              // like product ids or amount
+            })
+              .then((response) => response.json())
+              .then((order) => order.id);
           },
           // Finalize the transaction after payer approval
           onApprove: async function (data, actions) {
