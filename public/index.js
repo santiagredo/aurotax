@@ -1,20 +1,16 @@
-import {urlFrontSever} from "./config";
-import {urlBdSever} from "./config";
-
-//Urls para hacer peticiones al servidor
-// const baseUrl = 'https://152.70.118.197:8383';
-const baseUrl = urlFrontSever;
-// const dotEnv = require("dotEnv")
-// const baseUrl = 'http://localhost:8383';
+const urlBdSever = "https://gd05688e24a07c4-aurotaxbd.adb.ca-montreal-1.oraclecloudapps.com/ords/admin/taxpayer/taxpayer"
+const baseUrl = 'http://localhost:8383';
 const getUrl = '/get';
 const postUrl = '/post';
 const pdfUrl = '/pdf'
 
 
+
 //La clase pdfValues captura los valores de cada entrada del formulario
 const form = document.getElementsByClassName("pdfValues");
 const form2 = document.getElementsByClassName("pdfValues2");
-//console.log(form);
+
+
 
 //Función para enviar la captura de valores del formulario al servidor
 // Guarda la informacion de la opcion 1
@@ -103,21 +99,6 @@ async function downloadPdf(objRec){
     console.log('downloadPdf objRec')
     console.log(objRec)
 
-    // let obj = objRec
-
-    // //Con los valores en un objeto, se envía el objeto al servidor
-    // const res = await fetch(`${baseUrl}/decrypted`, {
-    //     method: 'POST',
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify({
-    //         data: obj
-    //     })
-    // })
-
-    // //Respuesta del servidor. Recibe un objeto: {status: data}. Devuelve el mismo objeto enviado
-    // const data = await res.json();
 
     let dataRec = objRec;
 
@@ -149,16 +130,6 @@ async function downloadPdf(objRec){
         window.open(`./assets/form1Pdf/${dataRec.name}_${dataRec.lastName}_${dataRec.email}_5.pdf`)
         window.open(`./assets/form1Pdf/${dataRec.name}_${dataRec.lastName}_${dataRec.email}_6.pdf`)
     },1000)
-
-
-    //Código para descargar el pdf
-    // const anchor = document.createElement("a");
-    // anchor.href = './assets/copyOfGeneratedPDF.pdf';
-    // anchor.download = 'downloadableCopyOfGeneratedPDF.pdf';
-
-    // document.body.appendChild(anchor);
-    // anchor.click();
-    // document.body.removeChild(anchor);
 }
 
 async function downloadPdf2(dataObj){
@@ -202,15 +173,12 @@ async function sendEncryptData(data){
     let botton =  document.getElementById("sendData")
     console.log(dataTosend);
     $.ajax({
-        url : urlBdSever +'/api/taxpayer/save',
-        // url : 'http://155.248.236.50:8080/api/taxpayer/save',
+        url : urlBdSever,
         type : 'POST',
-        //dataType : 'json',
         data:dataTosend,
         contentType:'application/json',
         success : function(json){
             botton.disabled = true; 
-            // alert("Informacion guardada con exito. Muchas gracias por confiar en nosotros.");
             swal("Informacion enviada con exito!","No olvides enviar un mensaje al administrador via whatsapp notificando el envio de la informacion.", "success").then(value => {
                 setTimeout(() => {location.reload(); }, 1000);
                 window.location.href = "https://wa.me/573167782676?text=Hola%20,%20ya%20envie%20mi%20informacion.";
@@ -218,7 +186,6 @@ async function sendEncryptData(data){
 
         },
         error : function(xhr, status){
-        //   alert("Error parcero, comuniquese con el administrador.");
           swal("Error al enviar!","Comuniquese con el administrador.", "warning").then(value => {
             setTimeout(() => {location.reload(); }, 1000);
             window.location.href = "https://wa.me/573167782676?text=Hola%20,%20hay%un%20error%20al%20enviar%20la%20información.";
@@ -235,7 +202,5 @@ async function optDosEnd(){
     setTimeout(() => {
         botton.disabled = true; 
     }, 10000)
-
 }
-            
-
+        

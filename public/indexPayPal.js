@@ -1,35 +1,30 @@
 paypal
-        .Buttons({
-          // Sets up the transaction when a payment button is clicked
-          createOrder: async function (data, actions) {
+    .Buttons({
+        createOrder: async function (data, actions) {
             return await fetch("/api/orders", {
-              method: "post",
-              // use the "body" param to optionally pass additional order information
-              // like product ids or amount
+                method: "post",
             })
-              .then((response) => response.json())
-              .then((order) => order.id);
-          },
-          // Finalize the transaction after payer approval
-          onApprove: async function (data, actions) {
+                .then((response) => response.json())
+                .then((order) => order.id);
+        },
+        onApprove: async function (data, actions) {
             return await fetch(`/api/orders/${data.orderID}/capture`, {
-              method: "post",
+                method: "post",
             })
-              .then((response) => response.json())
-              .then((orderData) => {
-                // Successful capture! For dev/demo purposes:
-                console.log(
-                  "Capture result",
-                  orderData,
-                  JSON.stringify(orderData, null, 2)
-                );
-                const transaction =
-                  orderData.purchase_units[0].payments.captures[0];
-                window.location.href = './formOpt1.html'
-              });
-          },
-            onCancel: () => {
-                alert('Order canceled')
-            }
-        })
-        .render("#paypal-button-container");
+                .then((response) => response.json())
+                .then((orderData) => {
+                    console.log(
+                        "Capture result",
+                        orderData,
+                        JSON.stringify(orderData, null, 2)
+                    );
+                    const transaction =
+                        orderData.purchase_units[0].payments.captures[0];
+                    window.location.href = "./formOpt1.html";
+                });
+        },
+        onCancel: () => {
+            alert("Order canceled");
+        },
+    })
+    .render("#paypal-button-container");

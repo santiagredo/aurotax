@@ -47,7 +47,7 @@ app.use(function(req, res, next) {
 
 //Cambiar username y password en prod
 passport.use(new passportLocal((username, password, done) => {
-    if(username === usernameEnv && password === passwordEnv){
+    if(username === 'admin' && password === '123'){
         //cambiar id y name en prod
         return done(null, {id: 1, name: 'Administrator'})
     }
@@ -128,7 +128,6 @@ app.post('/post', async (req, res) => {
 //Endpoint para recibir los valores del formulario, recibe un objeto
 app.post('/postAdmin', async (req, res) => {
     const {data} = req.body;
-    console.log(data, 'postAdmin')
     
     //Devuelve un objeto con mensaje 'failed', en caso de error
     if(!data){return res.status(400).send({status: 'failed'})};
@@ -144,7 +143,6 @@ app.post('/postAdmin', async (req, res) => {
 // get decrypted data 
 app.post('/decrypted', async (req, res) => {
     const {data} = req.body;
-    console.log(data);
 
      //Usa un import dinamico para poder usar ES modules con common JS, importa el desencriptador
      const decryptor = await import('./decryptor.mjs');
@@ -193,7 +191,6 @@ async function hub(data){
     //Parametro 1: Ruta del formulario base: server/assets
     //Parametro 2: Ruta del nuevo formulario: server/assets, se reescribe el archivo existente, crea uno nuevo de no haberlo
     //parametro 3: Objeto enviado desde el front
-    // console.log(__dirname)
     const pdfFile = await generator.createPdf1040(path.join(__dirname, '../server/assets/1.Form1040NR.pdf'),path.join(__dirname,`../server/assets/${data.name}_${data.lastName}_${data.email}_1.pdf`), data);
     const pdfFileOI = await generator.createPdfOI(path.join(__dirname, '../server/assets/2.Schedule_OI.pdf'),path.join(__dirname,`../server/assets/${data.name}_${data.lastName}_${data.email}_2.pdf`), data);
     const pdfFileC = await generator.createPdfC1040(path.join(__dirname, '../server/assets/3.ScheduleC1040.pdf'),path.join(__dirname,`../server/assets/${data.name}_${data.lastName}_${data.email}_3.pdf`), data);

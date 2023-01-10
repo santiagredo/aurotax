@@ -20,7 +20,7 @@
         <script src="https://unpkg.com/downloadjs@1.4.7"></script>
     
             <!-- calculos -->
-        <script defer src="./index.js"></script>
+        <script defer src="./index.js" type="module"></script>
         <script defer src="./pdf.js"></script>
         <script defer src="./validators.js"></script>
         <script type="text/javascript" src="./finance.js"></script> 
@@ -29,7 +29,7 @@
         <title>AuroTax - Payer</title>
         <link rel="icon" type="image/x-icon" href="./assets/images/favicon3.ico" sizes="96x96">
 </head>
-<body onload="findByIdDesencryted1(idTaxPayer)">
+<body onload="findByIdDecrypted1(idTaxPayer)">
 
 <div class="container mt-4">
 
@@ -544,13 +544,13 @@
             <td>*Transporte</td>
             <td><input type="number" class="form-control pdfValues" id="transport"></td>
           </tr>
-          <tr>
+          
             <tr>
             <th scope="row">3</th>
             <td>*Educacion</td>
             <td><input type="number" class="form-control pdfValues" id="education"></td>
           </tr>
-        </tr>
+        
         <tr>
           <tr>
             <tr>

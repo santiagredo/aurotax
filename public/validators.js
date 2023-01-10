@@ -17,6 +17,8 @@ function validation() {
     })
 }
 
+
+
 //calculadora de dias
 
 // Input DateEnd
@@ -33,6 +35,8 @@ function showContentDate(){
     }
 }
 
+
+
  //2019
  function calculardiasDiscount2019(){
     let timeStart = new Date(document.getElementById("dateEnter").value);
@@ -48,6 +52,8 @@ function showContentDate(){
         document.getElementById("days2019").value = 0;
     }
 }
+
+
 
 //2020
 function calculardiasDiscount2020(){
@@ -71,6 +77,8 @@ function calculardiasDiscount2020(){
     }
 }
 
+
+
 //2021
 function calculardiasDiscount2021(){
     let timeStart = new Date(document.getElementById("dateEnter").value);
@@ -93,6 +101,8 @@ function calculardiasDiscount2021(){
         document.getElementById("days2021").value = 0;
     }
 }
+
+
 
 //2022
 function calculardiasDiscount2022(){
@@ -124,6 +134,7 @@ function calculardiasDiscount2022(){
 }
 
 
+
 // Input forms from last year
 function showContent1(){
     element = document.getElementById("inputLastTaxForm");
@@ -137,6 +148,7 @@ function showContent1(){
         $("#lastTaxForm").val("");
     }
 }
+
 
 
 // Input forms from last year
@@ -154,6 +166,7 @@ function showContentStatus1(){
 }
 
 
+
 //Input ssn
 function validateSsn(){
     element1 = document.getElementById("ssn").value;
@@ -166,6 +179,8 @@ function validateSsn(){
         ssnAlert.style.display='none';
     }
 }
+
+
 
 //Input ssn
 function validateSsn2(){
@@ -183,6 +198,8 @@ function validateSsn2(){
     }
 }
 
+
+
 // Estimador de income
 function helpIncome(){
     let  wageHelp = document.getElementById("wageHelp").value
@@ -196,14 +213,13 @@ function helpIncome(){
     } else{
         document.getElementById("wage").value = totalHelp
         sumIncome();
-        alert("Ingrese un valor para continuar.");
-        
+        alert("Ingrese un valor para continuar.");   
     }
-
 }
 
-//ocultar mostrar income estimado
 
+
+//ocultar mostrar income estimado
 $(document).ready(function(){
 
     let incomeDiv = document.getElementById("ingresosDiv");
@@ -228,9 +244,11 @@ $(document).ready(function(){
          }
        });
      });
-   });
+});
 
-   //Ocultar estimador
+
+
+//Ocultar estimador
 function ocultarEstimador(){
     elementz = document.getElementById("helpIncome");
     let incomeDiv = document.getElementById("ingresosDiv");
@@ -254,6 +272,8 @@ function ocultarEstimador(){
 
 }
 
+
+
 function hidecollapse(){
 
     collapse1 = document.getElementById("collapseIngresos");
@@ -272,101 +292,6 @@ function hidecollapse(){
 }
 
 
-
-
-// //POST JSON - SAVE
-// function saveTaxPayer(){
-//     let name = $("#name").val();
-//     let lastName = $("#lastName").val();
-//     let ssn = $("#ssn").val();
-//     let ssn2 = $("#ssn2").val();
-//     let country = $("#country").val();
-//     let homeAddress = $("#homeAddress").val();
-//     let apt = $("#apt").val();
-//     let city = $("#city").val();
-//     let postalCode = $("#postalCode").val();
-//     let state = $("#state").val();
-//     let phone = $("#phone").val();
-//     let email = $("#email").val();
-//     let dateEnter = $("#dateEnter").val();
-//     let dateEnd = $("#dateEnd").val();
-//     let days2019 = $("#daysDiscount2019").val();
-//     let days2020 = $("#daysDiscount2020").val();
-//     let days2021 = $("#daysDiscount2021").val();
-//     let days2022 = $("#daysDiscount2022").val();
-//     let taxes = $("#taxes-yes").val();
-//     let lastTaxForm = $("#lastTaxForm").val();
-//     let status = $("#status-yes").val();
-//     let changeStatus = $("#changeStatus").val();
-//     let terms = $("#terms").val();
-
-//     //Finance
-//     let netProfit = $("#netProfit1").val();
-//     let profitAdjusted = $("#profitAdjusted1").val();
-//     let deductionSelfEmp = $("#deductionSelfEmp1").val();
-//     let taxOne = $("#taxOne1").val();
-//     let taxTwo = $("#taxTwo1").val();
-//     let totalTaxPartOne = $("#totalTaxPartOne1").val();
-//     let deductionSelfEmpTax = $("#deductionSelfEmpTax1").val();
-//     let baseAdjusted = $("#baseAdjusted1").val();
-//     let taxPartTwo = $("#taxPartTwo1").val();
-//     let totalTaxYear = $("#totalTaxYear1").val();
-    
-//     let data = {
-//         name:name,
-//         lastName:lastName,
-//         ssn:ssn,
-//         ssn2:ssn2,
-//         country:country,
-//         homeAddress:homeAddress,
-//         apt:apt,
-//         city:city,
-//         postalCode:postalCode,
-//         state:state,
-//         phone:phone,
-//         email:email,
-//         dateEnter:dateEnter,
-//         dateEnd:dateEnd,
-//         days2019:days2019,
-//         days2020:days2020,
-//         days2021:days2021,
-//         days2022:days2022,
-//         taxes:taxes,
-//         lastTaxForm:lastTaxForm,
-//         status:status,
-//         changeStatus:changeStatus,
-//         terms:terms,
-//         netProfit:netProfit,
-//         profitAdjusted:profitAdjusted,
-//         deductionSelfEmp:deductionSelfEmp,
-//         taxOne:taxOne,
-//         taxTwo:taxTwo,
-//         totalTaxPartOne:totalTaxPartOne,
-//         deductionSelfEmpTax:deductionSelfEmpTax,
-//         baseAdjusted:baseAdjusted,
-//         taxPartTwo:taxPartTwo,
-//         totalTaxYear:totalTaxYear
-//     };
-//     let dataTosend=JSON.stringify(data);
-//     console.log(dataTosend);
-//     $.ajax({
-//         url : 'http://localhost:8080/api/taxpayer/save',
-//         type : 'POST',
-//         //dataType : 'json',
-//         data:dataTosend,
-//         contentType:'application/json',
-//         success : function(json){
-
-//             alert("Informacion guardada con exito");
-//             location.reload();
-
-//         },
-//         error : function(xhr, status){
-//           alert("Error parcero");
-            
-//         }
-//     });
-// } 
  
 function saveInfoGeneral(){
     let name, lastName, ssn, ssn2, country, homeAddress, postalCode, state, phone, email;days2022;{
@@ -448,6 +373,7 @@ function saveInfoGeneral(){
 }
 
 
+
 function clean(){
     
     $("#name").val("");
@@ -470,6 +396,7 @@ function clean(){
 }
 
 
+
 function limpiar(){
     $('input[type="text"]').val('');
     $('input[type="number"]').val('');
@@ -487,10 +414,14 @@ function recargar(){
     }
 };
 
+
+
 function showDays() {
 	let element = document.getElementById("days");
 	element.style.display = "block";
 }
+
+
 
 function showAlertDays(){
     let days2020 = document.getElementById("days2022").value;
@@ -508,6 +439,8 @@ function showAlertDays(){
 
 }
 
+
+
 function showGeneral() {
 	let element = document.getElementById("general");
     let element2 = document.getElementById("finanzas");
@@ -519,6 +452,8 @@ function showGeneral() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
 }
+
+
 
 function hideGeneral() {
 	let element = document.getElementById("general");
@@ -536,6 +471,7 @@ function hideGeneral() {
 }
 
 
+
 function hidefinanzas() {
 	let element3 = document.getElementById("finanzas");
     let element4 = document.getElementById("resumen");
@@ -545,6 +481,8 @@ function hidefinanzas() {
     document.getElementById('collapse1').click();
     document.getElementById("wage").focus();
 }
+
+
 
 function showFinanzas() {
 	let element = document.getElementById("general");
@@ -558,6 +496,8 @@ function showFinanzas() {
     document.getElementById("wage").focus();
     
 }
+
+
 
 //Input total Ingresos
 function showTotalIncome(){
@@ -576,6 +516,8 @@ function showTotalIncome(){
     }
 }
 
+
+
 //Input total Ingresos
 function showTotalHelpIncome(){
     element1 = document.getElementById("wageHelp").value;
@@ -589,6 +531,8 @@ function showTotalHelpIncome(){
     }
 }
 
+
+
 //Input total Egresos
 function showTotalExpenses(){
     element1 = document.getElementById("totalE").value;
@@ -601,6 +545,8 @@ function showTotalExpenses(){
         inputTotalExpensesDiv.style.display='none';
     }
 }
+
+
 
 function alertaGastos(){
     element1 = document.getElementById("totalE").value;
@@ -621,14 +567,3 @@ function upperCase(string) {
     let x = string.toUpperCase();
     return x;
 }
-
-
-
-
-
-
-
-
-
-
-
