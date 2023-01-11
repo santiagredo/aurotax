@@ -12,7 +12,8 @@ export async function decryptHub(data){
     //Crea un nuevo objeto despues de aplanar la informacion recibida
     let obj = JSON.parse(JSON.stringify(data));
     obj.idtaxpayer=String(obj.idtaxpayer);
-
+    console.log("Object received from server, ID parsed to string")
+    console.log(data)
 
     //Recorre todos los valores en obj, desencriptandolos a su paso
     //La desencriptacion requiere el vector de inicializacion, que fue asignado al objeto al momento de crearlo
@@ -21,6 +22,8 @@ export async function decryptHub(data){
             obj[key] = decrypt(obj[key], obj.iv)
         }
     }
+    console.log("Object Decrypted")
+    console.log(data)
     return obj
 }
 

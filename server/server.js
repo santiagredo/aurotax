@@ -104,7 +104,7 @@ app.post('/login', passport.authenticate('local', {
 //Endpoint para recibir los valores del formulario, recibe un objeto
 app.post('/post', async (req, res) => {
     const {data} = req.body;
-    
+
     //Devuelve un objeto con mensaje 'failed', en caso de error
     if(!data){return res.status(400).send({status: 'failed'})};
     
@@ -143,6 +143,8 @@ app.post('/postAdmin', async (req, res) => {
 // get decrypted data 
 app.post('/decrypted', async (req, res) => {
     const {data} = req.body;
+    console.log("Object received from paid form")
+    console.log(data)
 
      //Usa un import dinamico para poder usar ES modules con common JS, importa el desencriptador
      const decryptor = await import('./decryptor.mjs');
