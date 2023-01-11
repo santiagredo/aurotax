@@ -217,7 +217,7 @@
     function deleteById(idtaxpayer) {
         $.ajax({
             type: "DELETE",
-            url: `${ApiUrl}/${idtaxpayer}`,
+            url: `${ApiUrl}?idTaxPayer=${idtaxpayer}`,
             dataType: "json",
             crossDomain: true,
             data: JSON.stringify({ idtaxpayer: idtaxpayer }),

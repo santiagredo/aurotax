@@ -13,8 +13,8 @@ const fs = require('fs');
 const passport = require('passport');
 const app = express();
 const port = process.env.SERVER_PORT;
-const usernameEnv = process.env.USERNAME;
-const passwordEnv = process.env.PASSWORD;
+const usernameEnv = process.env.ADMINISTRATOR_USERNAME;
+const passwordEnv = process.env.ADMINISTRATOR_PASSWORD;
 const cookieParserSecret = process.env.COOKIE_PARSER_SECRET;
 
 
@@ -47,7 +47,7 @@ app.use(function(req, res, next) {
 
 //Cambiar username y password en prod
 passport.use(new passportLocal((username, password, done) => {
-    if(username === 'admin' && password === '123'){
+    if(username === usernameEnv && password === passwordEnv){
         //cambiar id y name en prod
         return done(null, {id: 1, name: 'Administrator'})
     }
