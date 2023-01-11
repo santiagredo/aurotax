@@ -17,7 +17,8 @@ const form2 = document.getElementsByClassName("pdfValues2");
 async function postInfo(){
     //Función para envolver todos los valores del formulario en un objeto. Los valores son enviados como objeto al servidor
     let obj = objCreator();
-
+    console.log("Object received in postInfo")
+    console.log(obj)
     //Con los valores en un objeto, se envía el objeto al servidor
     const res = await fetch(`${baseUrl}${postUrl}`, {
         method: 'POST',
@@ -76,8 +77,8 @@ function objCreator(){
     let obj =  Object.fromEntries(
         formElements.map(element => [element.id, element.value])
     )
+    console.log("Object created successfully")
     console.log(obj)
-    console.log("aqui estoy")
     return(obj)
 }
 

@@ -189,6 +189,9 @@
             complete: async function (response) {
                 if (response.status == 200) {
                     const data = JSON.parse(response.responseText);
+                    data.items.sort((a,b) => {
+                        return a.idtaxpayer - b.idtaxpayer
+                    })
                     console.log(data.items);
                     $("tbody").html("");
                     for (let index = 0; index < data.items.length; index++) {
