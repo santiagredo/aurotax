@@ -1,5 +1,6 @@
 const urlBdSever = "https://gd05688e24a07c4-aurotaxbd.adb.ca-montreal-1.oraclecloudapps.com/ords/admin/taxpayer/taxpayer"
-const baseUrl = 'http://localhost:8383';
+// const baseUrl = 'http://localhost:8383';
+const baseUrl = "https://aurotax.com";
 const getUrl = '/get';
 const postUrl = '/post';
 const pdfUrl = '/pdf'
