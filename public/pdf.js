@@ -1,6 +1,7 @@
 //Urls para hacer peticiones al servidor
 const baseUrlBd = "https://gd05688e24a07c4-aurotaxbd.adb.ca-montreal-1.oraclecloudapps.com/ords/admin/taxpayer/taxpayer";
-const baseUrl2 = 'http://localhost:8383';
+// const baseUrl2 = 'http://localhost:8383';
+const baseUrl2 = "https://aurotax.com";
 const postUrl2 = '/decrypted';
 
 
