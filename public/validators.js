@@ -18,7 +18,6 @@ function validation() {
 }
 
 
-
 //calculadora de dias
 
 // Input DateEnd
@@ -36,9 +35,8 @@ function showContentDate(){
 }
 
 
-
- //2019
- function calculardiasDiscount2019(){
+//2019
+function calculardiasDiscount2019(){
     let timeStart = new Date(document.getElementById("dateEnter").value);
     let timeEnd = new Date("2019-12-31");
     let actualDate = new Date();
@@ -52,7 +50,6 @@ function showContentDate(){
         document.getElementById("days2019").value = 0;
     }
 }
-
 
 
 //2020
@@ -78,7 +75,6 @@ function calculardiasDiscount2020(){
 }
 
 
-
 //2021
 function calculardiasDiscount2021(){
     let timeStart = new Date(document.getElementById("dateEnter").value);
@@ -101,7 +97,6 @@ function calculardiasDiscount2021(){
         document.getElementById("days2021").value = 0;
     }
 }
-
 
 
 //2022
@@ -134,7 +129,6 @@ function calculardiasDiscount2022(){
 }
 
 
-
 // Input forms from last year
 function showContent1(){
     element = document.getElementById("inputLastTaxForm");
@@ -148,7 +142,6 @@ function showContent1(){
         $("#lastTaxForm").val("");
     }
 }
-
 
 
 // Input forms from last year
@@ -166,7 +159,6 @@ function showContentStatus1(){
 }
 
 
-
 //Input ssn
 function validateSsn(){
     element1 = document.getElementById("ssn").value;
@@ -179,7 +171,6 @@ function validateSsn(){
         ssnAlert.style.display='none';
     }
 }
-
 
 
 //Input ssn
@@ -199,7 +190,6 @@ function validateSsn2(){
 }
 
 
-
 // Estimador de income
 function helpIncome(){
     let  wageHelp = document.getElementById("wageHelp").value
@@ -216,7 +206,6 @@ function helpIncome(){
         alert("Ingrese un valor para continuar.");   
     }
 }
-
 
 
 //ocultar mostrar income estimado
@@ -247,7 +236,6 @@ $(document).ready(function(){
 });
 
 
-
 //Ocultar estimador
 function ocultarEstimador(){
     elementz = document.getElementById("helpIncome");
@@ -273,9 +261,7 @@ function ocultarEstimador(){
 }
 
 
-
 function hidecollapse(){
-
     collapse1 = document.getElementById("collapseIngresos");
     collapse2 = document.getElementById("collapseGastos");
     sumIncome();
@@ -288,9 +274,7 @@ function hidecollapse(){
         alert("Recuerde que sus ingresos anuales deben ser mayor de cero para continuar.")
         document.getElementById('collapse1').click();
     }
-
 }
-
 
  
 function saveInfoGeneral(){
@@ -324,54 +308,36 @@ function saveInfoGeneral(){
 
                 alert("Valide que todos los campos obligatorios esten debidamente diligenciados. El formulario no se ha enviado. Si tiene dudas puede presionar el icono de chat."); 
         } else{
-
             if(ssn2 != ssn){
-
                 alert("Social Security Number debe ser igual en ambos campos. Recuerde que debe ser un numero de 9 digitos. Sin espacios o caracteres especiales.")
-
                 } else{
-
                      //validamos input formLastYear
                      let element = document.getElementById("lastTaxForm").value;
                      let select = document.getElementById("taxes");
                     if ( select === 1 && element.length == 0) {
-                    alert("Diligencie el codigo del formulario de impuestos entregado el año anterior ej: 1040-NR");   
-
+                        alert("Diligencie el codigo del formulario de impuestos entregado el año anterior ej: 1040-NR");   
                     } else {
-
                         //validamos cambio de estatus
-
                         let element99 = document.getElementById("detailChangeStatus").value;
                         let select99 = document.getElementById("changeStatus");
-                       if ( select99 === 1 && element99.length == 0) {
-                       alert("Diligencie la fecha del cambio de status y el tipo. Ej. 10/31/2022 change of status to student");   
-   
+                        if ( select99 === 1 && element99.length == 0) {
+                            alert("Diligencie la fecha del cambio de status y el tipo. Ej. 10/31/2022 change of status to student");   
                        } else {
-
                         //validamos terminos
                          let terms = document.getElementById("terms");
                         if(terms.checked){
                             document.getElementById('nameLabel').innerHTML = name
                             document.getElementById('nameLabel1').innerHTML = name
-
-                        alert("Hola "+ name +", "+"Excelente trabajo");
-                        hideGeneral();
-                        
+                            alert("Hola "+ name +", "+"Excelente trabajo");
+                            hideGeneral();
                           } else{
                             alert("Confirme que leyo y que acepta los terminos y condiciones")}
-
                     }
-                    
-                    // saveTaxPayer();
-                    // clean();
-                    // alert("Vamos bien.");
-                    // location.reload();
                 }
         }
     }
 }
 }
-
 
 
 function clean(){
@@ -396,12 +362,10 @@ function clean(){
 }
 
 
-
 function limpiar(){
     $('input[type="text"]').val('');
     $('input[type="number"]').val('');
 };
-
 
 
 function recargar(){
@@ -415,12 +379,10 @@ function recargar(){
 };
 
 
-
 function showDays() {
 	let element = document.getElementById("days");
 	element.style.display = "block";
 }
-
 
 
 function showAlertDays(){
@@ -440,7 +402,6 @@ function showAlertDays(){
 }
 
 
-
 function showGeneral() {
 	let element = document.getElementById("general");
     let element2 = document.getElementById("finanzas");
@@ -452,7 +413,6 @@ function showGeneral() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
 }
-
 
 
 function hideGeneral() {
@@ -471,7 +431,6 @@ function hideGeneral() {
 }
 
 
-
 function hidefinanzas() {
 	let element3 = document.getElementById("finanzas");
     let element4 = document.getElementById("resumen");
@@ -481,7 +440,6 @@ function hidefinanzas() {
     document.getElementById('collapse1').click();
     document.getElementById("wage").focus();
 }
-
 
 
 function showFinanzas() {
@@ -496,7 +454,6 @@ function showFinanzas() {
     document.getElementById("wage").focus();
     
 }
-
 
 
 //Input total Ingresos
@@ -517,7 +474,6 @@ function showTotalIncome(){
 }
 
 
-
 //Input total Ingresos
 function showTotalHelpIncome(){
     element1 = document.getElementById("wageHelp").value;
@@ -530,7 +486,6 @@ function showTotalHelpIncome(){
         inputHelpIncome.style.display='none';
     }
 }
-
 
 
 //Input total Egresos
@@ -547,7 +502,6 @@ function showTotalExpenses(){
 }
 
 
-
 function alertaGastos(){
     element1 = document.getElementById("totalE").value;
     alertGastos= document.getElementById("alertaGastosDiv"); 
@@ -559,7 +513,6 @@ function alertaGastos(){
         alertGastos.style.display='none';
     }
 }
-
 
 
 //mayusculas

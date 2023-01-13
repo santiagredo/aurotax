@@ -2,7 +2,6 @@ import { PDFDocument } from 'pdf-lib';
 import { readFile, writeFile } from 'fs/promises';
 
 
-//Funcion exportada para la creacion del pdf
 export async function createPdf1040(input, output, values){
     try{
         const pdfDoc = await PDFDocument.load(await readFile(input));
@@ -90,8 +89,6 @@ export async function createPdfOI(input, output, values){
         const pdfDoc = await PDFDocument.load(await readFile(input));
         const form = pdfDoc.getForm();
 
-        //Usar ``
-        //No '' 
 
         //Full name
         form.getTextField('form1040-NR[0].Page1[0].f1_01[0]').setText(`${values.name} ${values.lastName}`);
@@ -177,8 +174,6 @@ export async function createPdfC1040(input, output, values){
         const pdfDoc = await PDFDocument.load(await readFile(input));
         const form = pdfDoc.getForm();
 
-        //Usar ``
-        //No '' 
 
     //INICIA SCHEDULE C
 
@@ -296,9 +291,6 @@ export async function createPdfSE(input, output, values){
         const pdfDoc = await PDFDocument.load(await readFile(input));
         const form = pdfDoc.getForm();
 
-        //Usar ``
-        //No '' 
-
         //INICIA SCHEDULE SE
 
         //FULL NAME
@@ -353,8 +345,6 @@ export async function createPdfAI1(input, output, values){
         const pdfDoc = await PDFDocument.load(await readFile(input));
         const form = pdfDoc.getForm();
 
-        //Usar ``
-        //No '' 
 
         //INICIA SCHEDULE AI1- SCHEDULE 1
 
@@ -403,8 +393,6 @@ export async function createPdfAT2(input, output, values){
         const pdfDoc = await PDFDocument.load(await readFile(input));
         const form = pdfDoc.getForm();
 
-        //Usar ``
-        //No '' 
 
         //INICIA SCHEDULE AT2- SCHEDULE 2
 

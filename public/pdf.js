@@ -5,7 +5,6 @@ const baseUrl2 = "https://aurotax.com";
 const postUrl2 = '/decrypted';
 
 
-
 function findByIdDecrypted1(){
     let idTaxPayer= sessionStorage.getItem('idTaxPayer');
     console.log(`El TPID es: ${idTaxPayer}`)
@@ -73,9 +72,7 @@ function findByIdDecrypted1(){
 }
 
 
-
 async function getAllDecryptedData(obj){
-     
     const res = await fetch(`${baseUrl2}${postUrl2}`, {
         method: 'POST',
         headers: {

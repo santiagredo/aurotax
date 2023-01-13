@@ -1,4 +1,3 @@
-// import fetch from "node-fetch";
 import 'dotenv/config';
 
 const value = process.env.AMOUNT_TO_PAY;

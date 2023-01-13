@@ -2,14 +2,11 @@ import { PDFDocument } from 'pdf-lib';
 import { readFile, writeFile } from 'fs/promises';
 
 
-//Funcion exportada para la creacion del pdf
 export async function createPdf10402(input, output, values){
     try{
         const pdfDoc = await PDFDocument.load(await readFile(input));
         const form = pdfDoc.getForm();
 
-        //Usar ``
-        //No '' 
 
         //name
         // form.getTextField('form1040-NR[0].Page1[0].f1_01[0]').setText(`${values.name} ${values.lastName}`);
@@ -85,8 +82,6 @@ export async function createPdfOI2(input, output, values){
         const pdfDoc = await PDFDocument.load(await readFile(input));
         const form = pdfDoc.getForm();
 
-        //Usar ``
-        //No '' 
 
         //Full name
         form.getTextField('form1040-NR[0].Page1[0].f1_01[0]').setText(`${values.name} ${values.lastName}`);

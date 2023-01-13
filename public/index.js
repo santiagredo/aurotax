@@ -31,23 +31,18 @@ async function postInfo(){
         })
     })
 
-    //Respuesta del servidor. Recibe un objeto: {status: data}. Devuelve el mismo objeto enviado
     const data = await res.json();
     console.log(data.status);
     sendEncryptData(data.status2);
 
-    //Funcion para descargar/abrir el pdf
      //await downloadPdf();
 }
 
-//Función para enviar la captura de valores del formulario al servidor y generar los PDF.
+
 async function postInfo1(){
-    //Función para envolver todos los valores del formulario en un objeto. Los valores son enviados como objeto al servidor
     let obj = objCreator();
     console.log(obj)
 
-
-    //Con los valores en un objeto, se envía el objeto al servidor
     const res = await fetch(`${baseUrl}${postUrl}Admin`, {
         method: 'POST',
         headers: {
@@ -58,20 +53,14 @@ async function postInfo1(){
         })
     })
 
-    //Respuesta del servidor. Recibe un objeto: {status: data}. Devuelve el mismo objeto enviado
     const data = await res.json();
     console.log('Server res')
     console.log(data.status);
 
-    // sendEncryptData(data.status);
-
-    //Funcion para descargar/abrir el pdf
     await downloadPdf(data.status);
-    
 }
 
 
-//Funcion para envolver los valores del formulario en un objeto
 function objCreator(){
     const formElements = Array.from(form);
 
@@ -83,7 +72,7 @@ function objCreator(){
     return(obj)
 }
 
-//Funcion para envolver los valores del formulario en un objeto
+
 function objCreator2(){
     const formElements = Array.from(form2);
 
@@ -95,8 +84,8 @@ function objCreator2(){
     return(obj2)
 }
 
-//Funcion para descargar/abrir el archivo pdf
-//El servidor genera un pdf en la carpeta server/assets, luego hace una copia de ese archivo en la carpte public/assets, al cual ingresa esta funcion
+
+//The server generates a pdf in the server/assets folder, then makes a copy of that file in the public/assets folder, which this function passes into
 async function downloadPdf(objRec){
     console.log('downloadPdf objRec')
     console.log(objRec)
@@ -104,9 +93,9 @@ async function downloadPdf(objRec){
 
     let dataRec = objRec;
 
-    //Por alguna razón, toca abrir el pdf dos veces, la primera apertura no muestra los datos recientes, no es problema del back, ni del código del front, ya que los archivos sí se actualizan bien 
+    //For some reason, I have to open the pdf twice, the first opening does not show the recent data, it is not a problem with the back, nor with the front code, since the files do update well
 
-    //Loader abre el archivo en una nueva ventana, y la cierra a los 10 milisegundos
+    //Loader opens the file in a new window, and closes it after 10 milliseconds    
     function loader(data){
         let temp = window.open(`./assets/form1Pdf/${data.name}_${data.lastName}_${data.email}_1.pdf`,'windowname','width=1,height=1,left=5,top=3')
         setTimeout(() => {temp.close()}, 10)
@@ -123,7 +112,7 @@ async function downloadPdf(objRec){
     }
     loader(dataRec);
 
-    //Este timeout abre por segunda vez el pdf 1 segundo después. 
+    //This timeout opens the pdf a second time 1 second later.
     setTimeout(() => {
         window.open(`./assets/form1Pdf/${dataRec.name}_${dataRec.lastName}_${dataRec.email}_1.pdf`)
         window.open(`./assets/form1Pdf/${dataRec.name}_${dataRec.lastName}_${dataRec.email}_2.pdf`)
@@ -137,9 +126,9 @@ async function downloadPdf(objRec){
 async function downloadPdf2(dataObj){
     const data = dataObj;
 
-    //Por alguna razón, toca abrir el pdf tres veces, la primera apertura no muestra los datos recientes, no es problema del back, ni del código del front, ya que los archivos sí se actualizan bien 
+    //For some reason, you have to open the pdf three times, the first opening does not show the recent data, it is not a problem with the back, nor with the front code, since the files update well
 
-    //Loader abre el archivo en una nueva ventana, y la cierra a los 10 milisegundos
+    //Loader opens the file in a new window, and closes it after 10 milliseconds 
     function loader2(data){
         let temp = window.open(`./assets/form1Pdf/${data.name}_${data.lastName}_${data.email}_1.pdf`,'windowname','width=1,height=1,left=5,top=3')
         setTimeout(() => {temp.close()}, 10)
@@ -152,22 +141,13 @@ async function downloadPdf2(dataObj){
         loader2(data)
     }, 1000)
 
-    //Este timeout abre por segunda vez el pdf 3 segundos después. 
+    //This timeout opens the pdf a second time 3 seconds later. 
     setTimeout(() => {
         window.open(`./assets/form1Pdf/${data.name}_${data.lastName}_${data.email}_1.pdf`)
         window.open(`./assets/form1Pdf/${data.name}_${data.lastName}_${data.email}_2.pdf`)
     },3000)
-
-
-    //Código para descargar el pdf
-    // const anchor = document.createElement("a");
-    // anchor.href = './assets/copyOfGeneratedPDF.pdf';
-    // anchor.download = 'downloadableCopyOfGeneratedPDF.pdf';
-
-    // document.body.appendChild(anchor);
-    // anchor.click();
-    // document.body.removeChild(anchor);
 }
+
 
 async function sendEncryptData(data){
     // const data = await res.json();
