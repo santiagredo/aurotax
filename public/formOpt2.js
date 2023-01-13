@@ -64,7 +64,7 @@ const form3 = document.getElementsByClassName("pdfValues2");
         //TOTAL TAX YEAR
         form.getTextField('topmostSubform[0].Page2[0].f2_35[0]').setText(`${values1.totalTaxYear}`);
         //CONSTANTE
-        form.getTextField('topmostSubform[0].Page2[0].f2_40[0]').setText('CHILDCARE PROVIDER');
+        form.getTextField('topmostSubform[0].Page2[0].f2_40[0]').setText('AU PAIR');
         //PHONE
         form.getTextField('topmostSubform[0].Page2[0].f2_42[0]').setText(`${values1.phone}`); 
         //Email

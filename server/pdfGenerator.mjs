@@ -39,9 +39,9 @@ export async function createPdf1040(input, output, values){
         //NetProfit -9
         form.getTextField('topmostSubform[0].Page1[0].f1_51[0]',).setText(`${values.netProfit}`);
         //DEDUCT. PART SELF EMP (SE FORM)-10a
-        form.getTextField('topmostSubform[0].Page1[0].Line10_ReadOrder[0].f1_52[0]',).setText(`${values.deductionSelfEmp}`);
+        form.getTextField('topmostSubform[0].Page1[0].Line10_ReadOrder[0].f1_52[0]',).setText(`${values.deductionSelfEmpTax}`);
         //DEDUCT. PART SELF EMP (SE FORM)-10d
-        form.getTextField('topmostSubform[0].Page1[0].f1_55[0]',).setText(`${values.deductionSelfEmp}`);
+        form.getTextField('topmostSubform[0].Page1[0].f1_55[0]',).setText(`${values.deductionSelfEmpTax}`);
         //BASE AJUSTADA (H=A-G)
         form.getTextField('topmostSubform[0].Page1[0].f1_56[0]',).setText(`${values.baseAdjusted}`);
         //BASE AJUSTADA  (H=A-G)

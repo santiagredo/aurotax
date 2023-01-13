@@ -9,7 +9,7 @@ function liquidar() {
         var profit = Math.round(income - expenses);
         var rateAdjuste = 0.9235;
         var profitAdjusted = Math.round(rateAdjuste * profit);
-        var deductionSelfEmpTax = Math.round(profit - profitAdjusted);
+        var deductionSelfEmp = Math.round(profit - profitAdjusted);
         if (profit < 400) {
             var taxOne = 0;
             var taxTwo = 0;
@@ -55,7 +55,7 @@ function liquidar() {
                 document.getElementById("profitAdjusted").value =
                     profitAdjusted;
                 document.getElementById("deductionSelfEmp").value =
-                    deductionSelfEmpTax;
+                    deductionSelfEmp;
                 document.getElementById("taxOne").value = taxOne;
                 document.getElementById("taxTwo").value = taxTwo;
                 document.getElementById("totalTaxPartOne").value =
