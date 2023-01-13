@@ -50,7 +50,7 @@ function findByIdDecrypted1(){
                     document.getElementById("taxOne").value = `${data2.taxone}`
                     document.getElementById("taxTwo").value = `${data2.taxtwo}`
                     document.getElementById("totalTaxPartOne").value = `${data2.totaltaxpartone}`
-                    document.getElementById("deductionSelfEmpTax").value = `${data2.deductionselfempTax}`
+                    document.getElementById("deductionSelfEmpTax").value = `${data2.deductionselfemptax}`
                     document.getElementById("baseAdjusted").value = `${data2.baseadjusted}`
                     document.getElementById("taxPartTwo").value = `${data2.taxparttwo}`
                     document.getElementById("totalTaxYear").value = `${data2.totaltaxyear}`
